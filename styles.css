@@ -52,6 +52,33 @@ body {
   animation: rise 520ms ease-out both;
 }
 
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0 0 1.2rem;
+  padding: 0.15rem 0.62rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.58);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+}
+
+.lang-switch a {
+  text-decoration: none;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.lang-switch a.active {
+  color: var(--text);
+}
+
+.lang-switch a:hover {
+  text-decoration: underline;
+}
+
 .kicker {
   margin: 0 0 0.5rem;
   letter-spacing: 0.12em;

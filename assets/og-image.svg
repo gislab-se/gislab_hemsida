@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">GISLab - Henrik Alden</title>
+  <desc id="desc">GIS analysis, landscapes, and local projects</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f5f3ea"/>
+      <stop offset="100%" stop-color="#ebe7d6"/>
+    </linearGradient>
+    <linearGradient id="shape" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1f5f43"/>
+      <stop offset="100%" stop-color="#0d3524"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1060" cy="80" r="180" fill="#d2ccba" opacity="0.55"/>
+  <circle cx="80" cy="560" r="220" fill="#d8e0c8" opacity="0.6"/>
+  <rect x="72" y="72" width="1056" height="486" rx="36" fill="white" fill-opacity="0.62" stroke="#d2ccba" stroke-width="2"/>
+  <path d="M140 146h96l132 143 180-187 194 207h163" stroke="url(#shape)" stroke-width="16" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="140" y="358" font-family="Newsreader, Georgia, serif" font-size="86" font-weight="700" fill="#1f2b22">GISLab</text>
+  <text x="140" y="422" font-family="Manrope, Segoe UI, sans-serif" font-size="36" font-weight="600" fill="#2c3a31">Henrik Alden</text>
+  <text x="140" y="476" font-family="Manrope, Segoe UI, sans-serif" font-size="28" fill="#3f4c44">GIS analysis, landscapes, energy transition</text>
+</svg>
