@@ -1,0 +1,161 @@
+:root {
+  --bg: #f5f3ea;
+  --bg-soft: #ebe7d6;
+  --text: #1f2b22;
+  --muted: #4b5a4f;
+  --line: #d2ccba;
+  --link: #16543a;
+  --link-hover: #0e3827;
+  --panel: rgba(255, 255, 255, 0.76);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Manrope", "Segoe UI", sans-serif;
+  color: var(--text);
+  background: linear-gradient(130deg, var(--bg) 0%, var(--bg-soft) 100%);
+  line-height: 1.6;
+}
+
+.page-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(700px 320px at 92% -10%, rgba(22, 84, 58, 0.13), transparent 70%),
+    radial-gradient(620px 280px at -6% 30%, rgba(60, 97, 77, 0.12), transparent 72%);
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  width: min(860px, 92%);
+  margin: 0 auto;
+  padding: 4.5rem 0 3rem;
+}
+
+.hero {
+  margin-bottom: 2.2rem;
+  animation: rise 520ms ease-out both;
+}
+
+.kicker {
+  margin: 0 0 0.5rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+h1,
+h2 {
+  font-family: "Newsreader", Georgia, serif;
+  line-height: 1.1;
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(2.15rem, 6vw, 3.5rem);
+  margin-bottom: 0.85rem;
+}
+
+.lead {
+  margin: 0;
+  max-width: 64ch;
+  color: #2c3a31;
+  font-size: clamp(1.02rem, 2vw, 1.16rem);
+}
+
+.panel {
+  margin-top: 1.05rem;
+  padding: 1.2rem 1.1rem;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--panel);
+  backdrop-filter: blur(1px);
+  animation: rise 620ms ease-out both;
+}
+
+.panel h2 {
+  margin-bottom: 0.7rem;
+  font-size: clamp(1.42rem, 3.2vw, 1.9rem);
+}
+
+.panel p {
+  margin: 0.75rem 0;
+}
+
+.project-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.project-list li {
+  padding: 0.7rem 0 0.2rem;
+  border-top: 1px solid var(--line);
+}
+
+.project-list li:first-child {
+  border-top: 0;
+  padding-top: 0.2rem;
+}
+
+a {
+  color: var(--link);
+  text-decoration-thickness: 1.2px;
+  text-underline-offset: 2px;
+}
+
+a:hover {
+  color: var(--link-hover);
+}
+
+.project-list a {
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.project-list a:hover {
+  text-decoration: underline;
+}
+
+.contact p {
+  margin: 0.45rem 0 0.9rem;
+}
+
+@media (max-width: 700px) {
+  .container {
+    width: min(700px, 94%);
+    padding-top: 3rem;
+  }
+
+  .panel {
+    padding: 1rem 0.9rem;
+    border-radius: 12px;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(7px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
