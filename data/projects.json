@@ -1,0 +1,54 @@
+{
+  "email": {
+    "user": "henrik",
+    "domain": "gislab.se",
+    "subject_sv": "Kontakt via gislab.se",
+    "subject_en": "Contact via gislab.se"
+  },
+  "projects": [
+    {
+      "url": "https://atbaralandskap.github.io/speedlocal_bornholm/geocontext/bornholm_gc4_report.html",
+      "title": {
+        "sv": "SpeedLocal - Bornholm Energy Landscape",
+        "en": "SpeedLocal - Bornholm Energy Landscape"
+      },
+      "description": {
+        "sv": "Geografisk landskapsanalys d\u00e4r energidata, landanv\u00e4ndning och rumsliga indikatorer analyseras med geocontext-metoden och visualiseras i kartor och diagram.",
+        "en": "Geospatial landscape analysis where energy data, land use, and spatial indicators are analyzed with the geocontext method and visualized in maps and charts."
+      }
+    },
+    {
+      "url": "https://gislab-textanalysis-app-jqcappdx8wfxudyg8funvvk.streamlit.app/",
+      "title": {
+        "sv": "Rubensson - Textanalysverktyg",
+        "en": "Rubensson - Text Analysis Tool"
+      },
+      "description": {
+        "sv": "Ett experimentellt verktyg f\u00f6r att analysera textmassor och identifiera m\u00f6nster i ord, begrepp och teman i dokument.",
+        "en": "An experimental tool for analyzing text corpora and identifying patterns in words, concepts, and themes."
+      }
+    },
+    {
+      "url": "https://www.gislab.se",
+      "title": {
+        "sv": "GISLab",
+        "en": "GISLab"
+      },
+      "description": {
+        "sv": "Plattform f\u00f6r experiment med GIS, dataanalys, kartor och AI-baserade verktyg.",
+        "en": "A platform for experiments with GIS, data analysis, maps, and AI-based tools."
+      }
+    },
+    {
+      "url": "https://www.atbaralandskap.se",
+      "title": {
+        "sv": "\u00c4tbara Landskap",
+        "en": "Edible Landscapes"
+      },
+      "description": {
+        "sv": "Projekt och id\u00e9er kring agroforestry, skogsodling och nut-orchards - hur produktiva landskap kan designas f\u00f6r b\u00e5de m\u00e4nniskor och ekosystem.",
+        "en": "Projects and ideas around agroforestry, forest gardening, and nut orchards - how productive landscapes can be designed for both people and ecosystems."
+      }
+    }
+  ]
+}

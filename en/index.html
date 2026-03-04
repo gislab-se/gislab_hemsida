@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>GISLab | Henrik Ald&eacute;n</title>
   <meta name="description" content="GISLab - Henrik Ald&eacute;n. GIS analysis, landscapes, energy transition, and place-based projects.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
   <link rel="canonical" href="https://gislab.se/en/">
   <link rel="alternate" hreflang="sv" href="https://gislab.se/">
   <link rel="alternate" hreflang="en" href="https://gislab.se/en/">
@@ -27,8 +28,35 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=Newsreader:opsz,wght@6..72,500;6..72,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css">
+  <script src="/scripts/main.js" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Henrik Ald\u00e9n",
+    "jobTitle": "GIS Analyst",
+    "url": "https://gislab.se/",
+    "telephone": "+46 733 79 53 20",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Holmav\u00e4gen 119",
+      "postalCode": "277 45",
+      "addressLocality": "Sankt Olof",
+      "addressCountry": "SE"
+    },
+    "worksFor": {
+      "@type": "Organization",
+      "name": "T\u00e5ghusa 1:38 AB",
+      "identifier": "559566-7337"
+    },
+    "sameAs": [
+      "https://www.gislab.se/",
+      "https://www.atbaralandskap.se/"
+    ]
+  }
+  </script>
 </head>
-<body>
+<body data-lang="en">
   <div class="page-bg" aria-hidden="true"></div>
   <main class="container">
     <header class="hero">
@@ -59,28 +87,8 @@
 
     <section class="panel" aria-labelledby="projects">
       <h2 id="projects">Projects</h2>
-      <ul class="project-list">
-        <li>
-          <a href="https://atbaralandskap.github.io/speedlocal_bornholm/geocontext/bornholm_gc4_report.html" target="_blank" rel="noopener noreferrer">
-            SpeedLocal - Bornholm Energy Landscape
-          </a>
-          <p>Geospatial landscape analysis of energy data, land use, and spatial indicators using the geocontext method.</p>
-        </li>
-        <li>
-          <a href="https://gislab-textanalysis-app-jqcappdx8wfxudyg8funvvk.streamlit.app/" target="_blank" rel="noopener noreferrer">
-            Rubensson - Text Analysis Tool
-          </a>
-          <p>An experimental tool for exploring large text corpora and identifying patterns in words, concepts, and themes.</p>
-        </li>
-        <li>
-          <a href="https://www.gislab.se" target="_blank" rel="noopener noreferrer">GISLab</a>
-          <p>A platform for experiments in GIS, data analysis, maps, and AI-based tools.</p>
-        </li>
-        <li>
-          <a href="https://www.atbaralandskap.se" target="_blank" rel="noopener noreferrer">Edible Landscapes</a>
-          <p>Projects around agroforestry, forest gardening, and nut orchards - productive landscapes for people and ecosystems.</p>
-        </li>
-      </ul>
+      <ul class="project-list" data-project-list></ul>
+      <p class="section-meta">Project items are loaded from <code>data/projects.json</code>.</p>
     </section>
 
     <section class="panel contact" aria-labelledby="contact">
@@ -97,6 +105,8 @@
       </p>
       <p>
         <a href="tel:+46733795320">+46 733 79 53 20</a><br>
+        <a href="#" data-email-link data-user="henrik" data-domain="gislab.se" data-subject-sv="Kontakt via gislab.se" data-subject-en="Contact via gislab.se">Send email</a><br>
+        <span class="email-obfuscated" data-email-obfuscated>henrik [at] gislab [dot] se</span><br>
         <a href="https://www.gislab.se" target="_blank" rel="noopener noreferrer">www.gislab.se</a>
       </p>
     </section>
