@@ -64,24 +64,77 @@
     var title = pickText(project.title);
     var description = pickText(project.description);
     var url = typeof project.url === "string" ? project.url : "";
+    var links = Array.isArray(project.links) ? project.links : [];
 
-    if (!title || !description || !url) {
+    if (!title || !description) {
+      return null;
+    }
+
+    var normalizedLinks = [];
+
+    if (url) {
+      normalizedLinks.push({ label: title, url: url, primary: true });
+    }
+
+    links.forEach(function (link) {
+      if (!link || typeof link !== "object") {
+        return;
+      }
+      var linkLabel = pickText(link.label);
+      if (!linkLabel) {
+        return;
+      }
+      var linkUrl = typeof link.url === "string" ? link.url : "";
+      normalizedLinks.push({ label: linkLabel, url: linkUrl, primary: false });
+    });
+
+    if (normalizedLinks.length === 0) {
       return null;
     }
 
     var li = document.createElement("li");
-    var a = document.createElement("a");
     var p = document.createElement("p");
 
-    a.href = url;
-    a.target = "_blank";
-    a.rel = "noopener noreferrer";
-    a.textContent = title;
+    var mainLink = normalizedLinks[0];
+    var titleNode;
+    if (mainLink.url) {
+      titleNode = document.createElement("a");
+      titleNode.href = mainLink.url;
+      titleNode.target = "_blank";
+      titleNode.rel = "noopener noreferrer";
+    } else {
+      titleNode = document.createElement("span");
+    }
+    titleNode.textContent = title;
 
     p.textContent = description;
 
-    li.appendChild(a);
+    li.appendChild(titleNode);
     li.appendChild(p);
+
+    if (normalizedLinks.length > 1) {
+      var linksWrap = document.createElement("div");
+      linksWrap.className = "project-links";
+
+      normalizedLinks.slice(1).forEach(function (item) {
+        if (item.url) {
+          var extra = document.createElement("a");
+          extra.className = "project-link-chip";
+          extra.href = item.url;
+          extra.target = "_blank";
+          extra.rel = "noopener noreferrer";
+          extra.textContent = item.label;
+          linksWrap.appendChild(extra);
+        } else {
+          var disabled = document.createElement("span");
+          disabled.className = "project-link-chip is-disabled";
+          disabled.textContent = item.label;
+          linksWrap.appendChild(disabled);
+        }
+      });
+
+      li.appendChild(linksWrap);
+    }
 
     return li;
   }

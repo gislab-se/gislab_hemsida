@@ -212,3 +212,28 @@ a:hover {
     transform: translateY(0);
   }
 }
+
+
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 0.45rem 0 0.2rem;
+}
+
+.project-link-chip {
+  display: inline-block;
+  padding: 0.08rem 0.5rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.55);
+  font-size: 0.83rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.project-link-chip.is-disabled {
+  color: var(--muted);
+  text-decoration: none;
+  opacity: 0.8;
+}

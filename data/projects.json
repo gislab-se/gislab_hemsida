@@ -7,15 +7,51 @@
   },
   "projects": [
     {
-      "url": "https://atbaralandskap.github.io/speedlocal_bornholm/geocontext/bornholm_gc4_report.html",
+      "url": "https://speedlocal-bornholm.streamlit.app/",
       "title": {
-        "sv": "SpeedLocal - Bornholm Energy Landscape",
-        "en": "SpeedLocal - Bornholm Energy Landscape"
+        "sv": "Speedlocal - Bornholms Energy Landscape",
+        "en": "Speedlocal - Bornholm's Energy Landscape"
       },
       "description": {
-        "sv": "Geografisk landskapsanalys d\u00e4r energidata, landanv\u00e4ndning och rumsliga indikatorer analyseras med geocontext-metoden och visualiseras i kartor och diagram.",
-        "en": "Geospatial landscape analysis where energy data, land use, and spatial indicators are analyzed with the geocontext method and visualized in maps and charts."
-      }
+        "sv": "Huvudapp för energiscenarier på Bornholm. Appen läser in landskapsanalys från projektet Landskapsanalys. För frågor och fördjupning finns separat landskapsanalys-app och Quarto-rapport.",
+        "en": "Main app for Bornholm energy scenarios. The app reads landscape analysis from the Landskapsanalys project. For questions and deeper review, use the separate landscape-analysis app and Quarto report."
+      },
+      "links": [
+        {
+          "label": {
+            "sv": "App",
+            "en": "App"
+          },
+          "url": "https://speedlocal-bornholm.streamlit.app/"
+        }
+      ]
+    },
+    {
+      "url": "https://atbaralandskap.github.io/speedlocal_bornholm/geocontext/bornholm_gc4_report.html",
+      "title": {
+        "sv": "Landskapsanalys",
+        "en": "Landscape Analysis"
+      },
+      "description": {
+        "sv": "Fristående geocontext- och klusteranalys för Bornholm som stödjer Speedlocal-appen.",
+        "en": "Standalone geocontext and cluster analysis for Bornholm that supports the Speedlocal app."
+      },
+      "links": [
+        {
+          "label": {
+            "sv": "App (lägg till URL)",
+            "en": "App (add URL)"
+          },
+          "url": ""
+        },
+        {
+          "label": {
+            "sv": "Quarto-rapport",
+            "en": "Quarto report"
+          },
+          "url": "https://atbaralandskap.github.io/speedlocal_bornholm/geocontext/bornholm_gc4_report.html"
+        }
+      ]
     },
     {
       "url": "https://gislab-textanalysis-app-jqcappdx8wfxudyg8funvvk.streamlit.app/",
@@ -24,7 +60,7 @@
         "en": "Rubensson - Text Analysis Tool"
       },
       "description": {
-        "sv": "Ett experimentellt verktyg f\u00f6r att analysera textmassor och identifiera m\u00f6nster i ord, begrepp och teman i dokument.",
+        "sv": "Ett experimentellt verktyg för att analysera textmassor och identifiera mönster i ord, begrepp och teman i dokument.",
         "en": "An experimental tool for analyzing text corpora and identifying patterns in words, concepts, and themes."
       }
     },
@@ -35,18 +71,18 @@
         "en": "GISLab"
       },
       "description": {
-        "sv": "Plattform f\u00f6r experiment med GIS, dataanalys, kartor och AI-baserade verktyg.",
+        "sv": "Plattform för experiment med GIS, dataanalys, kartor och AI-baserade verktyg.",
         "en": "A platform for experiments with GIS, data analysis, maps, and AI-based tools."
       }
     },
     {
       "url": "https://www.atbaralandskap.se",
       "title": {
-        "sv": "\u00c4tbara Landskap",
+        "sv": "Ätbara Landskap",
         "en": "Edible Landscapes"
       },
       "description": {
-        "sv": "Projekt och id\u00e9er kring agroforestry, skogsodling och nut-orchards - hur produktiva landskap kan designas f\u00f6r b\u00e5de m\u00e4nniskor och ekosystem.",
+        "sv": "Projekt och idéer kring agroforestry, skogsodling och nut-orchards - hur produktiva landskap kan designas för både människor och ekosystem.",
         "en": "Projects and ideas around agroforestry, forest gardening, and nut orchards - how productive landscapes can be designed for both people and ecosystems."
       }
     }
