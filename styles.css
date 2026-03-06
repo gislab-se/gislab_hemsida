@@ -237,3 +237,46 @@ a:hover {
   text-decoration: none;
   opacity: 0.8;
 }
+
+.maintenance-page {
+  display: grid;
+  place-items: center;
+}
+
+.maintenance-shell {
+  position: relative;
+  z-index: 1;
+  width: min(860px, 92%);
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.maintenance-card {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: clamp(1.2rem, 3vw, 2rem);
+}
+
+.maintenance-kicker {
+  margin: 0 0 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.maintenance-card h1 {
+  margin-bottom: 0.75rem;
+  font-size: clamp(2rem, 6vw, 3.25rem);
+}
+
+.maintenance-lead {
+  margin: 0;
+  font-size: clamp(1rem, 2.2vw, 1.18rem);
+  color: #2b3a31;
+}
+
+.maintenance-joke {
+  margin: 0.9rem 0 0;
+  color: var(--muted);
+}
