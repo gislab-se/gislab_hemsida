@@ -1,6 +1,10 @@
 # Project data
 
-Edit `projects.json` to update project cards without changing HTML.
+`projects.json` is a project inventory and can still be useful as source material.
+The public homepage now renders its key examples directly in HTML so search
+engines can read them without JavaScript.
+
+To change the homepage project cards, edit `index.html` and `en/index.html`.
 
 ## Structure
 

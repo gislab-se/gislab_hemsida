@@ -85,6 +85,46 @@
         "sv": "Projekt och idéer kring agroforestry, skogsodling och nut-orchards - hur produktiva landskap kan designas för både människor och ekosystem.",
         "en": "Projects and ideas around agroforestry, forest gardening, and nut orchards - how productive landscapes can be designed for both people and ecosystems."
       }
+    },
+    {
+      "url": "https://xn--frna-5qa.se/",
+      "title": {
+        "sv": "Förnas hemsida",
+        "en": "Förna website"
+      },
+      "description": {
+        "sv": "Hemsida för Förna, med tjänstebeskrivningar, referenser och kontakt.",
+        "en": "Website for Förna, with service description, references and contact."
+      },
+      "links": [
+        {
+          "label": {
+            "sv": "Besök Förna",
+            "en": "Visit Förna"
+          },
+          "url": "https://xn--frna-5qa.se/"
+        }
+      ]
+    },
+    {
+      "url": "",
+      "title": {
+        "sv": "H3 3D-modell",
+        "en": "H3 3D model"
+      },
+      "description": {
+        "sv": "Kommande projekt: separat repo med 3D-modell för webbpresentation.",
+        "en": "Upcoming project: separate repo with 3D model for web presentation."
+      },
+      "links": [
+        {
+          "label": {
+            "sv": "Repo kommer snart",
+            "en": "Repo coming soon"
+          },
+          "url": ""
+        }
+      ]
     }
   ]
 }
