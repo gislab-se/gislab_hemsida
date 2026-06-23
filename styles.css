@@ -58,12 +58,28 @@ a:hover {
 
 .site-header {
   display: flex;
-  justify-content: flex-end;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
   margin-bottom: 2.25rem;
+}
+
+.site-brand {
+  display: inline-flex;
+  align-items: center;
+  width: min(260px, 64vw);
+  text-decoration: none;
+}
+
+.site-brand img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .lang-switch {
   display: inline-flex;
+  flex: 0 0 auto;
   align-items: center;
   gap: 0.45rem;
   padding: 0.2rem 0.64rem;
@@ -401,7 +417,12 @@ h3 {
   }
 
   .site-header {
+    align-items: flex-start;
     margin-bottom: 1.35rem;
+  }
+
+  .site-brand {
+    width: min(220px, 62vw);
   }
 
   .hero,
