@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Labbet | GISLab</title>
+  <meta name="description" content="Labbet hos GISLab samlar projektidéer, prototyper och analyser under utveckling inom GIS, planering, landskap och klimatanpassning.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://gislab.se/lab/">
+  <link rel="alternate" hreflang="sv" href="https://gislab.se/lab/">
+  <link rel="alternate" hreflang="x-default" href="https://gislab.se/lab/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="GISLab">
+  <meta property="og:locale" content="sv_SE">
+  <meta property="og:title" content="Labbet | GISLab">
+  <meta property="og:description" content="Projektidéer, prototyper och analyser under utveckling inom GIS, planering, landskap och klimatanpassning.">
+  <meta property="og:url" content="https://gislab.se/lab/">
+  <meta property="og:image" content="https://gislab.se/snygg_karta.png">
+  <meta property="og:image:alt" content="Karta med hexagonbaserad geodataanalys">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Labbet | GISLab">
+  <meta name="twitter:description" content="Projektidéer, prototyper och analyser under utveckling.">
+  <meta name="twitter:image" content="https://gislab.se/snygg_karta.png">
+  <meta name="theme-color" content="#24342b">
+  <link rel="icon" href="/assets/favicon.svg?v=2" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body data-lang="sv" data-page="lab-index">
+  <main class="page">
+    <header class="site-header">
+      <a class="site-brand" href="/" aria-label="GISLab startsida">
+        <img src="../assets/logo-map-horizontal.png" alt="GISLab">
+      </a>
+      <nav class="lang-switch" aria-label="Språkval">
+        <a href="/lab/" lang="sv" aria-current="page" class="active">SV</a>
+        <span aria-hidden="true">/</span>
+        <a href="/en/" lang="en">EN</a>
+      </nav>
+    </header>
+
+    <section class="hero lab-hero" aria-labelledby="lab-title">
+      <div class="hero-copy">
+        <p class="eyebrow">GISLab / Labbet</p>
+        <h1 id="lab-title">Laboratoriet.</h1>
+        <p class="lead">Projektidéer, prototyper och analyser som får vara på väg. Här kan ett kort vara en skiss idag och en karta, app eller rapport senare.</p>
+        <div class="hero-actions" aria-label="Labblänkar">
+          <a class="button button-primary" href="#lab-projects">Utforska idéer</a>
+          <a class="button button-secondary" href="/">Till startsidan</a>
+        </div>
+        <ul class="trust-list" aria-label="Innehåll i Labbet">
+          <li>Idéer</li>
+          <li>Prototyper</li>
+          <li>GIS-analyser</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section lab-index-section" id="lab-projects" aria-labelledby="lab-projects-title">
+      <div class="section-heading">
+        <p class="eyebrow">På ritbordet</p>
+        <h2 id="lab-projects-title">Öppna spår att bygga vidare på.</h2>
+        <p>Korten visar möjliga riktningar för kommande analyser och verktyg. Vissa är bara frågor än så länge, andra kan växa till fungerande appar.</p>
+      </div>
+
+      <div class="card-grid lab-grid" data-lab-projects>
+        <noscript>
+          <article class="project-card">
+            <p class="card-label">Labbet</p>
+            <h3>Projektkorten laddas med JavaScript.</h3>
+            <p>Aktivera JavaScript för att se idéerna i Labbet.</p>
+          </article>
+        </noscript>
+      </div>
+    </section>
+  </main>
+  <script src="../scripts/main.js" defer></script>
+  <script src="../scripts/lab-projects.js" defer></script>
+  <script src="../scripts/lab.js" defer></script>
+</body>
+</html>

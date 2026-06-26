@@ -391,6 +391,191 @@ h3 {
   text-decoration-thickness: 1px;
 }
 
+.lab-feature {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1rem;
+  align-items: center;
+  padding: 1.2rem;
+  border: 1px solid var(--line);
+  border-top: 6px solid var(--rust);
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: var(--soft-shadow);
+  color: var(--ink);
+  text-decoration: none;
+  transition: transform 0.16s ease, border-color 0.16s ease, box-shadow 0.16s ease;
+}
+
+.lab-feature:hover {
+  border-color: rgba(180, 94, 60, 0.42);
+  box-shadow: var(--shadow);
+  color: var(--ink);
+  transform: translateY(-1px);
+}
+
+.lab-feature-text,
+.lab-feature-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.lab-feature-text strong {
+  color: var(--ink);
+  font-size: clamp(1.45rem, 2.4vw, 2rem);
+  font-weight: 880;
+  line-height: 1.05;
+}
+
+.lab-feature-text span:last-child {
+  max-width: 720px;
+  margin-top: 0.6rem;
+  color: var(--muted);
+}
+
+.lab-feature-meta {
+  align-items: flex-end;
+  gap: 0.45rem;
+}
+
+.lab-feature-meta span,
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.8rem;
+  padding: 0.25rem 0.58rem;
+  border: 1px solid rgba(47, 107, 79, 0.24);
+  border-radius: 6px;
+  background: rgba(47, 107, 79, 0.09);
+  color: var(--green-dark);
+  font-size: 0.82rem;
+  font-weight: 850;
+}
+
+.lab-hero {
+  min-height: 52vh;
+  background:
+    linear-gradient(90deg, rgba(14, 23, 18, 0.92) 0%, rgba(14, 23, 18, 0.7) 54%, rgba(14, 23, 18, 0.2) 100%),
+    url("snygg_karta.png") center right / contain no-repeat,
+    var(--hero);
+}
+
+.lab-detail-hero {
+  min-height: 48vh;
+}
+
+.lab-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.lab-card {
+  color: var(--ink);
+  text-decoration: none;
+  transition: transform 0.16s ease, border-color 0.16s ease, box-shadow 0.16s ease;
+}
+
+.lab-card:hover {
+  border-color: rgba(47, 107, 79, 0.38);
+  box-shadow: var(--shadow);
+  color: var(--ink);
+  transform: translateY(-1px);
+}
+
+.lab-card-meta {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.35rem;
+}
+
+.lab-card-meta .card-label {
+  margin-bottom: 0;
+}
+
+.lab-card-link {
+  text-decoration: underline;
+}
+
+.lab-subtopics,
+.lab-question-list {
+  padding: 0;
+  list-style: none;
+}
+
+.lab-subtopics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 0.9rem 0 0;
+}
+
+.lab-subtopics li {
+  min-height: 1.7rem;
+  padding: 0.22rem 0.52rem;
+  border: 1px solid rgba(180, 94, 60, 0.25);
+  border-radius: 6px;
+  background: rgba(180, 94, 60, 0.08);
+  color: var(--rust);
+  font-size: 0.83rem;
+  font-weight: 850;
+}
+
+.lab-detail-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.48fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+.lab-panel {
+  min-height: 100%;
+  padding: 1.25rem;
+  border: 1px solid var(--line);
+  border-top: 6px solid var(--green);
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: var(--soft-shadow);
+}
+
+.lab-side {
+  border-top-color: var(--rust);
+}
+
+.lab-panel h2 {
+  max-width: 760px;
+  font-size: clamp(1.6rem, 2.8vw, 2.25rem);
+}
+
+.lab-panel h3 {
+  font-size: 1.35rem;
+}
+
+.lab-panel p:not(.card-label) {
+  margin: 0.85rem 0 0;
+  color: var(--muted);
+}
+
+.lab-question-list {
+  display: grid;
+  gap: 0.7rem;
+  margin: 1rem 0 0;
+}
+
+.lab-question-list li {
+  padding-left: 0.85rem;
+  border-left: 3px solid rgba(47, 107, 79, 0.3);
+  color: var(--muted);
+}
+
+.lab-side-label {
+  margin-top: 1.35rem;
+}
+
+.lab-subtopics-large {
+  margin-top: 0.55rem;
+}
+
 .search-strip {
   display: grid;
   grid-template-columns: minmax(240px, 0.6fr) minmax(0, 1fr);
@@ -493,6 +678,10 @@ h3 {
   .services-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .lab-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 860px) {
@@ -560,6 +749,16 @@ h3 {
     justify-content: flex-start;
   }
 
+  .lab-feature,
+  .lab-detail-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .lab-feature-meta {
+    align-items: flex-start;
+    flex-flow: row wrap;
+  }
+
   .collab-list {
     grid-template-columns: 1fr;
   }
@@ -590,7 +789,8 @@ h3 {
   }
 
   .services-grid,
-  .work-grid {
+  .work-grid,
+  .lab-grid {
     grid-template-columns: 1fr;
   }
 }
