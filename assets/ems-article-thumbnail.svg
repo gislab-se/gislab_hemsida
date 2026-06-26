@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Forskningsartikel om ambulansuppdrag</title>
+  <desc id="desc">Stiliserad förhandsbild av en open access-artikel om geografisk analys av ambulansuppdrag i Sverige.</desc>
+  <defs>
+    <linearGradient id="paperShade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#f4f2ec"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="760" fill="#ebe8df"/>
+  <rect x="100" y="52" width="1000" height="656" rx="18" fill="url(#paperShade)" stroke="#d2cec3" stroke-width="2"/>
+  <rect x="152" y="86" width="896" height="34" rx="7" fill="#b3aea5"/>
+  <text x="166" y="110" fill="#111" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="900" letter-spacing="2">RESEARCH</text>
+  <text x="852" y="110" fill="#111" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="900">Open Access</text>
+  <text x="152" y="176" fill="#111" font-family="Inter, Arial, sans-serif" font-size="48" font-weight="500">Geographic distribution of EMS missions</text>
+  <text x="152" y="229" fill="#111" font-family="Inter, Arial, sans-serif" font-size="48" font-weight="500">and patient conditions in suburban and rural</text>
+  <text x="152" y="282" fill="#111" font-family="Inter, Arial, sans-serif" font-size="48" font-weight="500">Sweden</text>
+  <text x="152" y="331" fill="#333" font-family="Inter, Arial, sans-serif" font-size="22">David Summermatter, Hans Blomberg, Henrik Aldén, Björn Ång and Anneli Strömsöe</text>
+  <rect x="152" y="385" width="896" height="238" rx="10" fill="#fff" stroke="#b9b4aa" stroke-width="2"/>
+  <text x="174" y="421" fill="#111" font-family="Inter, Arial, sans-serif" font-size="23" font-weight="900">Abstract</text>
+  <text x="174" y="456" fill="#111" font-family="Inter, Arial, sans-serif" font-size="19" font-weight="900">Objective</text>
+  <text x="272" y="456" fill="#333" font-family="Inter, Arial, sans-serif" font-size="19">Swedish emergency medical services face challenges due to demand and distance.</text>
+  <text x="174" y="491" fill="#111" font-family="Inter, Arial, sans-serif" font-size="19" font-weight="900">Methods</text>
+  <text x="267" y="491" fill="#333" font-family="Inter, Arial, sans-serif" font-size="19">A descriptive observational study assessed patient conditions and geography.</text>
+  <text x="174" y="526" fill="#111" font-family="Inter, Arial, sans-serif" font-size="19" font-weight="900">Results</text>
+  <text x="252" y="526" fill="#333" font-family="Inter, Arial, sans-serif" font-size="19">EMS assessed 24,672 patients, with different patterns across rural and suburban areas.</text>
+  <text x="174" y="561" fill="#111" font-family="Inter, Arial, sans-serif" font-size="19" font-weight="900">Conclusions</text>
+  <text x="295" y="561" fill="#333" font-family="Inter, Arial, sans-serif" font-size="19">Geographic analysis helps compare access, response and transport patterns.</text>
+  <text x="174" y="596" fill="#111" font-family="Inter, Arial, sans-serif" font-size="19" font-weight="900">Keywords</text>
+  <text x="274" y="596" fill="#333" font-family="Inter, Arial, sans-serif" font-size="19">Emergency medical services, patient care, geographic information system</text>
+  <g transform="translate(158 650)">
+    <path d="M0 0h56l-56 56Z" fill="#973385"/>
+    <path d="M58 0h56v56H0Z" fill="#26314d"/>
+    <text x="132" y="45" fill="#26314d" font-family="Inter, Arial, sans-serif" font-size="54" font-weight="900">BMC</text>
+  </g>
+</svg>

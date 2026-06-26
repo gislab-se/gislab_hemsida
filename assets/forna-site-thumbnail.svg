@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Förna webbplats som thumbnail</title>
+  <desc id="desc">Stiliserad förhandsbild av Förnas webbplats med grönt sidhuvud, textpanel och innehållskort.</desc>
+  <defs>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M0 0 32 32M32 0 0 32" fill="none" stroke="#cfc6b3" stroke-width="1"/>
+    </pattern>
+    <linearGradient id="photo" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#233421"/>
+      <stop offset="0.5" stop-color="#7c8f63"/>
+      <stop offset="1" stop-color="#d6bd83"/>
+    </linearGradient>
+    <linearGradient id="shade" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#111812" stop-opacity="0.08"/>
+      <stop offset="1" stop-color="#111812" stop-opacity="0.26"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="760" fill="#ddd6c6"/>
+  <rect y="82" width="1200" height="678" fill="url(#grid)" opacity="0.58"/>
+  <rect width="1200" height="82" fill="#2f3f2c"/>
+  <text x="40" y="52" fill="#f6f1e6" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="800">Plantskola</text>
+  <text x="188" y="52" fill="#f6f1e6" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="800">Tjänster</text>
+  <text x="308" y="52" fill="#f6f1e6" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="800">Samskapardagar</text>
+  <rect x="116" y="152" width="968" height="112" rx="20" fill="#fffaf0" stroke="#bbb09d" stroke-width="2"/>
+  <text x="150" y="213" fill="#172017" font-family="Inter, Arial, sans-serif" font-size="26">Vi arbetar för jordbrukslandskap som blir mer artrika, produktiva och komplexa.</text>
+  <g transform="translate(116 305)">
+    <rect width="472" height="322" rx="20" fill="#fffaf0" stroke="#bdb29f" stroke-width="2"/>
+    <text x="30" y="78" fill="#152319" font-family="Inter, Arial, sans-serif" font-size="38" font-weight="900">Se Förna i rörelse</text>
+    <line x1="30" x2="442" y1="104" y2="104" stroke="#d7cfbf" stroke-width="2"/>
+    <rect x="30" y="130" width="412" height="152" rx="14" fill="url(#photo)"/>
+    <rect x="30" y="130" width="412" height="152" rx="14" fill="url(#shade)"/>
+    <circle cx="236" cy="206" r="40" fill="#e9442e"/>
+    <path d="M225 181 260 206 225 231Z" fill="#fffaf0"/>
+    <text x="58" y="170" fill="#fffaf0" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="900">Förna Draft 01</text>
+    <text x="58" y="196" fill="#fffaf0" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="700">Ansökningsvideo</text>
+  </g>
+  <g transform="translate(612 305)">
+    <rect width="472" height="322" rx="20" fill="#fffaf0" stroke="#bdb29f" stroke-width="2"/>
+    <rect x="30" y="32" width="412" height="186" fill="url(#photo)"/>
+    <rect x="30" y="32" width="412" height="186" fill="url(#shade)"/>
+    <circle cx="240" cy="112" r="46" fill="#d7bd83" opacity="0.75"/>
+    <path d="M140 218c58-62 123-72 190-31 30 18 61 28 92 28v3H140Z" fill="#182419" opacity="0.42"/>
+    <text x="30" y="254" fill="#687062" font-family="Inter, Arial, sans-serif" font-size="21">Förna i arbete</text>
+  </g>
+</svg>

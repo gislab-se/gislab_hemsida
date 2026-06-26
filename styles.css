@@ -345,6 +345,127 @@ h3 {
   min-height: 14.5rem;
 }
 
+.project-card[href] {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.project-card[href]:hover {
+  color: var(--ink);
+}
+
+.project-card.has-thumb {
+  overflow: hidden;
+  padding: 0;
+}
+
+.project-card-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 1.2rem;
+}
+
+.project-title {
+  display: block;
+  color: var(--ink);
+  font-size: 1.5rem;
+  font-weight: 880;
+  line-height: 1.1;
+}
+
+.project-copy {
+  display: block;
+  margin: 0.8rem 0 0;
+  color: var(--muted);
+  line-height: 1.62;
+}
+
+.project-thumb {
+  display: block;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  border-bottom: 1px solid var(--line);
+  background: var(--surface-soft);
+  color: inherit;
+  text-decoration: none;
+}
+
+.project-thumb:focus-visible,
+.project-card .text-link:focus-visible {
+  outline: 3px solid rgba(180, 94, 60, 0.42);
+  outline-offset: 3px;
+}
+
+.project-thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.01) translate3d(var(--thumb-x, 0), var(--thumb-y, 0), 0);
+  transition: transform 0.42s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.42s ease;
+}
+
+.magnetic-card {
+  --magnetic-x: 0px;
+  --magnetic-y: 0px;
+  --tilt-x: 0deg;
+  --tilt-y: 0deg;
+  --shine-x: 50%;
+  --shine-y: 50%;
+  --thumb-x: 0px;
+  --thumb-y: 0px;
+  position: relative;
+  transform: perspective(900px) translate3d(var(--magnetic-x), var(--magnetic-y), 0) rotateX(var(--tilt-x)) rotateY(var(--tilt-y));
+  transform-style: preserve-3d;
+  transition: transform 0.22s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.22s ease, box-shadow 0.22s ease;
+  will-change: transform;
+}
+
+.magnetic-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+  background:
+    radial-gradient(circle at var(--shine-x) var(--shine-y), rgba(255, 253, 248, 0.72), rgba(255, 253, 248, 0.08) 30%, transparent 58%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.22s ease;
+}
+
+.magnetic-card > * {
+  position: relative;
+  z-index: 2;
+}
+
+.magnetic-card:hover,
+.magnetic-card:focus-within,
+.magnetic-card.is-magnetic {
+  border-color: rgba(47, 107, 79, 0.42);
+  box-shadow: 0 24px 54px rgba(21, 25, 21, 0.18);
+}
+
+.magnetic-card:hover::after,
+.magnetic-card:focus-within::after,
+.magnetic-card.is-magnetic::after {
+  opacity: 0.62;
+}
+
+.magnetic-card:hover .project-thumb img,
+.magnetic-card:focus-within .project-thumb img,
+.magnetic-card.is-magnetic .project-thumb img {
+  filter: saturate(1.05) contrast(1.02);
+  transform: scale(1.06) translate3d(var(--thumb-x, 0), var(--thumb-y, 0), 0);
+}
+
+.magnetic-card:hover .text-link,
+.magnetic-card:focus-within .text-link,
+.magnetic-card.is-magnetic .text-link {
+  color: var(--rust);
+}
+
 .info-card:nth-child(2),
 .project-card:nth-child(2) {
   border-top-color: var(--blue);
@@ -792,5 +913,28 @@ h3 {
   .work-grid,
   .lab-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (hover: none), (pointer: coarse) {
+  .magnetic-card {
+    transform: none;
+    transition: border-color 0.16s ease, box-shadow 0.16s ease;
+  }
+
+  .magnetic-card::after {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .magnetic-card,
+  .project-thumb img {
+    transform: none;
+    transition: none;
+  }
+
+  .magnetic-card::after {
+    display: none;
   }
 }
