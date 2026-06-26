@@ -345,15 +345,6 @@ h3 {
   min-height: 14.5rem;
 }
 
-.project-card[href] {
-  color: var(--ink);
-  text-decoration: none;
-}
-
-.project-card[href]:hover {
-  color: var(--ink);
-}
-
 .project-card.has-thumb {
   overflow: hidden;
   padding: 0;
@@ -364,21 +355,6 @@ h3 {
   flex: 1;
   flex-direction: column;
   padding: 1.2rem;
-}
-
-.project-title {
-  display: block;
-  color: var(--ink);
-  font-size: 1.5rem;
-  font-weight: 880;
-  line-height: 1.1;
-}
-
-.project-copy {
-  display: block;
-  margin: 0.8rem 0 0;
-  color: var(--muted);
-  line-height: 1.62;
 }
 
 .project-thumb {
