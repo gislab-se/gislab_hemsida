@@ -936,6 +936,19 @@ h3 {
   .lab-grid {
     grid-template-columns: 1fr;
   }
+
+  .services-grid {
+    gap: 0;
+  }
+
+  .services-grid .info-card {
+    padding: 1.35rem 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .services-grid .info-card::before {
+    display: none;
+  }
 }
 
 @media (hover: none), (pointer: coarse) {
