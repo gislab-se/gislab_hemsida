@@ -202,8 +202,15 @@ h3 {
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
+  align-items: flex-start;
   gap: 0.75rem;
   margin-top: 1.75rem;
+}
+
+.hero-contact-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
 .button {
@@ -328,7 +335,6 @@ h3 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.info-card,
 .project-card {
   display: flex;
   flex-direction: column;
@@ -339,6 +345,21 @@ h3 {
   border-radius: 8px;
   background: var(--surface);
   box-shadow: var(--soft-shadow);
+}
+
+.info-card {
+  position: relative;
+  padding: 1.15rem 1.15rem 0 0;
+  border-top: 2px solid var(--green);
+}
+
+.info-card::before {
+  content: "";
+  display: block;
+  width: 2.5rem;
+  height: 0.32rem;
+  margin: -1.31rem 0 1.1rem;
+  background: var(--green);
 }
 
 .project-card {
@@ -442,19 +463,40 @@ h3 {
   color: var(--rust);
 }
 
-.info-card:nth-child(2),
 .project-card:nth-child(2) {
   border-top-color: var(--blue);
 }
 
-.info-card:nth-child(3),
 .project-card:nth-child(3) {
   border-top-color: var(--gold);
 }
 
-.info-card:nth-child(4),
 .project-card:nth-child(4) {
   border-top-color: var(--rust);
+}
+
+.info-card:nth-child(2) {
+  border-top-color: var(--blue);
+}
+
+.info-card:nth-child(2)::before {
+  background: var(--blue);
+}
+
+.info-card:nth-child(3) {
+  border-top-color: var(--gold);
+}
+
+.info-card:nth-child(3)::before {
+  background: var(--gold);
+}
+
+.info-card:nth-child(4) {
+  border-top-color: var(--rust);
+}
+
+.info-card:nth-child(4)::before {
+  background: var(--rust);
 }
 
 .info-card:nth-child(2) .card-label,
@@ -879,6 +921,10 @@ h3 {
   .hero-actions {
     align-items: stretch;
     flex-direction: column;
+  }
+
+  .hero-contact-actions {
+    width: 100%;
   }
 
   .button {
