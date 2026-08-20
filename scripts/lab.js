@@ -62,7 +62,7 @@
       var title = createElement("h3", "", project.title);
       var summary = createElement("p", "", project.summary);
 
-      card.href = "project.html?id=" + encodeURIComponent(project.id);
+      card.href = project.url || "project.html?id=" + encodeURIComponent(project.id);
       card.setAttribute("aria-label", project.title + " i Labbet");
 
       meta.appendChild(label);

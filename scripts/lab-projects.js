@@ -3,6 +3,15 @@
 
   window.GISLAB_LAB_PROJECTS = [
     {
+      id: "vattenforbrukning-vattern",
+      title: "Vattenförbrukning i Vättern",
+      category: "Vatten och resurser",
+      status: "Prototyp",
+      summary: "Utforska Vätterns vattenvolym som en 3D-brödlimpa och jämför vardaglig vattenförbrukning med hela sjön.",
+      tags: ["Vättern", "Vattenförbrukning", "3D"],
+      url: "/lab/vattenforbrukning/"
+    },
+    {
       id: "viltpassager-ecodukter",
       title: "Viltpassager och ekodukter",
       category: "Ekologiska samband",
