@@ -12,6 +12,15 @@
       url: "/lab/vattenforbrukning/"
     },
     {
+      id: "salenfjallen-3d",
+      title: "S\u00e4lenfj\u00e4llen i 3D",
+      category: "Terr\u00e4ng och turism",
+      status: "Prototyp",
+      summary: "Utforska S\u00e4lenfj\u00e4llen i en interaktiv 3D-modell med h\u00f6jdkurvor, skidanl\u00e4ggningar och flygplatsen.",
+      tags: ["S\u00e4lenfj\u00e4llen", "Terr\u00e4ng", "3D"],
+      url: "/lab/salenfjallen-3d/"
+    },
+    {
       id: "viltpassager-ecodukter",
       title: "Viltpassager och ekodukter",
       category: "Ekologiska samband",
