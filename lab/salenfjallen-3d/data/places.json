@@ -1,0 +1,12 @@
+[
+  {"id":"salen_by","name":"Sälens by","kind":"Åretruntort","lat":61.156,"lon":13.268},
+  {"id":"lindvallen","name":"Lindvallen","kind":"Fjällanläggning","lat":61.163,"lon":13.195},
+  {"id":"hogfjallet","name":"Högfjället","kind":"Fjällanläggning","lat":61.166,"lon":13.127},
+  {"id":"tandadalen","name":"Tandådalen","kind":"Fjällanläggning","lat":61.177,"lon":12.999},
+  {"id":"hundfjallet","name":"Hundfjället","kind":"Fjällanläggning","lat":61.174,"lon":12.965},
+  {"id":"vastra_trollbacken","name":"Västra Trollbäcken","kind":"Möjligt pilotområde","lat":61.181,"lon":12.941}
+  ,
+  {"id":"scandinavian_mountains_airport","name":"Scandinavian Mountains Airport","kind":"Flygplats","lat":61.159,"lon":12.84},
+  {"id":"stoten","name":"Stöten","kind":"Fjällanläggning","lat":61.2719,"lon":12.8976},
+  {"id":"klappen","name":"Kläppen","kind":"Fjällanläggning","lat":61.0356,"lon":13.3461}
+]
