@@ -157,9 +157,19 @@
     var sidePanel = createElement("aside", "lab-panel lab-side");
 
     mainPanel.appendChild(createElement("p", "card-label", project.status));
-    mainPanel.appendChild(createElement("h2", "", "Det här projektet är ännu bara en idé i Labbet."));
-    mainPanel.appendChild(createElement("p", "", project.emptyMessage));
-    mainPanel.appendChild(createElement("p", "", "När innehåll finns kan den här sidan rymma en enkel analys, karta, app, visualisering eller länk till ett externt verktyg."));
+
+    if (project.appUrl) {
+      mainPanel.appendChild(createElement("h2", "", "En interaktiv havsnivåmodell för Skåne."));
+      mainPanel.appendChild(createElement("p", "", project.description || project.summary));
+      mainPanel.appendChild(createElement("p", "", project.note || ""));
+      var appLink = createElement("a", "button button-primary", "Öppna havsnivåmodellen");
+      appLink.href = project.appUrl;
+      mainPanel.appendChild(appLink);
+    } else {
+      mainPanel.appendChild(createElement("h2", "", "Det här projektet är ännu bara en idé i Labbet."));
+      mainPanel.appendChild(createElement("p", "", project.emptyMessage));
+      mainPanel.appendChild(createElement("p", "", "När innehåll finns kan den här sidan rymma en enkel analys, karta, app, visualisering eller länk till ett externt verktyg."));
+    }
 
     sidePanel.appendChild(createElement("p", "card-label", "Möjliga frågor"));
     sidePanel.appendChild(createElement("h3", "", "Att undersöka"));
