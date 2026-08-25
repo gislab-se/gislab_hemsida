@@ -52,15 +52,12 @@
       id: "havsniva-klimatanpassning",
       title: "Havsnivå och klimatanpassning",
       category: "Klimat",
-      status: "Prototypidé",
-      summary: "Analyser kopplade till stigande havsnivåer, översvämningsrisker och långsiktig markanvändning.",
-      tags: ["Havsnivå", "Risk", "Markanvändning"],
-      questions: [
-        "Vilka ytor påverkas vid olika havsnivåscenarier?",
-        "Vilken samhällsviktig infrastruktur ligger i utsatta lägen?",
-        "Hur kan riskzoner visas tydligt utan att förenkla bort osäkerhet?"
-      ],
-      emptyMessage: "Det här projektet är ännu bara en idé i Labbet. Här kan havsnivåscenarier, riskkartor eller en enkel klimatanpassningsapp läggas till senare."
+      status: "Prototyp",
+      summary: "En interaktiv 3D-modell av stigande havsnivåer i Skåne, med terrängförstoring, dagens strandlinje och scenarier från 0 till +65 meter.",
+      tags: ["Havsnivå", "Klimatanpassning", "Skåne", "3D"],
+      appUrl: "/lab/havsniva-klimatanpassning/",
+      description: "Modellen visar markytor som kan nås av havet vid vald nivå. Höjddata kommer från Lantmäteriets markhöjdmodell och är webboptimerad för regional översikt.",
+      note: "Ett pedagogiskt scenario: det inkluderar inte stormflod, vågor, erosion, vallar eller avvattning."
     },
     {
       id: "markreformer-agostruktur",
