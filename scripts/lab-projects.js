@@ -21,6 +21,15 @@
       url: "/lab/salenfjallen-3d/"
     },
     {
+      id: "kollektivtrafik-dalarna",
+      title: "Kollektivtrafik i Dalarna",
+      category: "Mobilitet och tillgänglighet",
+      status: "Prototyp",
+      summary: "Utforska Dalatrafiks planerade trafik, linjer och hållplatser för den aktuella referensveckan.",
+      tags: ["Dalatrafik", "GTFS", "Kollektivtrafik"],
+      url: "https://kollektivtrafik-dalarna.streamlit.app/"
+    },
+    {
       id: "viltpassager-ecodukter",
       title: "Viltpassager och ekodukter",
       category: "Ekologiska samband",
