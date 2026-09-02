@@ -136,6 +136,111 @@ a:hover {
   background: linear-gradient(90deg, var(--green), var(--gold), var(--rust), var(--blue));
 }
 
+.flagship {
+  display: grid;
+  width: min(1180px, calc(100% - 48px));
+  grid-template-columns: minmax(0, 1.45fr) minmax(330px, 0.8fr);
+  gap: 0;
+  overflow: hidden;
+  margin: 3.1rem auto 0;
+  border: 1px solid rgba(255, 253, 248, 0.15);
+  border-radius: 10px;
+  background: #203d37;
+  box-shadow: var(--shadow);
+  color: var(--surface);
+}
+
+.flagship-visual {
+  display: block;
+  min-height: 430px;
+  overflow: hidden;
+  background: #d7e1dd;
+}
+
+.flagship-visual img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left center;
+  transition: transform 0.35s ease;
+}
+
+.flagship-visual:hover img {
+  transform: scale(1.018);
+}
+
+.flagship-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(1.6rem, 3vw, 2.8rem);
+}
+
+.flagship-copy .eyebrow {
+  color: #e0ad4a;
+}
+
+.flagship-copy h2 {
+  color: var(--surface);
+  font-size: clamp(2rem, 3.4vw, 3.25rem);
+  line-height: 0.98;
+}
+
+.flagship-copy > p:not(.eyebrow) {
+  margin: 1.15rem 0 0;
+  color: rgba(255, 253, 248, 0.78);
+  line-height: 1.62;
+}
+
+.flagship-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 1.2rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.flagship-tags li {
+  padding: 0.28rem 0.55rem;
+  border: 1px solid rgba(255, 253, 248, 0.22);
+  border-radius: 5px;
+  background: rgba(255, 253, 248, 0.08);
+  color: rgba(255, 253, 248, 0.76);
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.flagship-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.flagship-primary {
+  border-color: #e0ad4a;
+  background: #e0ad4a;
+  color: #1c302b;
+}
+
+.flagship-primary:hover {
+  border-color: #efbd5a;
+  background: #efbd5a;
+  color: #1c302b;
+}
+
+.flagship-link {
+  color: rgba(255, 253, 248, 0.82);
+  font-weight: 800;
+}
+
+.flagship-link:hover {
+  color: #fff;
+}
+
 .hero-copy {
   position: relative;
   z-index: 1;
@@ -332,7 +437,7 @@ h3 {
 }
 
 .work-grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .project-card {
@@ -821,6 +926,14 @@ h3 {
   .lab-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .flagship {
+    grid-template-columns: 1.15fr 0.85fr;
+  }
+
+  .work-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 860px) {
@@ -863,6 +976,7 @@ h3 {
   }
 
   .section,
+  .flagship,
   .search-strip,
   .collaboration,
   .contact {
@@ -871,6 +985,16 @@ h3 {
 
   .section {
     padding: 2.45rem 0;
+  }
+
+  .flagship {
+    grid-template-columns: 1fr;
+    margin-top: 2rem;
+  }
+
+  .flagship-visual {
+    min-height: 0;
+    aspect-ratio: 16 / 9;
   }
 
   .section-heading,
@@ -935,6 +1059,15 @@ h3 {
   .work-grid,
   .lab-grid {
     grid-template-columns: 1fr;
+  }
+
+  .flagship-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .flagship-link {
+    text-align: center;
   }
 
   .services-grid {

@@ -1,0 +1,59 @@
+{
+  "retrievedAt": "2026-09-02T11:20:21.360Z",
+  "municipality": "Simrishamn",
+  "municipalityCode": "1291",
+  "bufferKilometres": 10,
+  "featureCount": 238,
+  "counts": {
+    "Uppförda": 48,
+    "Beviljade": 0,
+    "Avslagna": 68,
+    "Handläggs": 0,
+    "Nedmonterade": 8,
+    "Överklagade": 0,
+    "Uppgift saknas": 0,
+    "Inte aktuella eller återkallade": 114
+  },
+  "statusLayers": [
+    {
+      "id": 5,
+      "status": "Uppförda"
+    },
+    {
+      "id": 6,
+      "status": "Beviljade"
+    },
+    {
+      "id": 7,
+      "status": "Avslagna"
+    },
+    {
+      "id": 8,
+      "status": "Handläggs"
+    },
+    {
+      "id": 9,
+      "status": "Nedmonterade"
+    },
+    {
+      "id": 10,
+      "status": "Överklagade"
+    },
+    {
+      "id": 11,
+      "status": "Uppgift saknas"
+    },
+    {
+      "id": 12,
+      "status": "Inte aktuella eller återkallade"
+    }
+  ],
+  "windService": "https://ext-geodata-applikationer.lansstyrelsen.se/arcgis/rest/services/VBK/lst_vbk_wms_vindbrukskollen/MapServer",
+  "boundarySource": "https://geodata.scb.se/geoserver/stat/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=stat%3ADeSO_2025&outputFormat=application%2Fjson&srsName=EPSG%3A4326&CQL_FILTER=kommunkod%3D%271291%27",
+  "notes": [
+    "Samtliga attribut som Vindbrukskollens ArcGIS-lager returnerade har behållits.",
+    "Kommungränsen är en upplösning av SCB:s DeSO 2025 för kommunkod 1291 och inkluderar havsterritoriet.",
+    "Urvalsbufferten är avsedd för visualisering, inte förrättning eller juridisk gränsbestämning.",
+    "Havsbaserade projekt ingår inte eftersom de publiceras som projektområden, inte enskilda vindkraftverk."
+  ]
+}
