@@ -65,6 +65,8 @@
       summary: "En interaktiv 3D-modell av stigande havsnivåer i Skåne, med terrängförstoring, dagens strandlinje och scenarier från 0 till +65 meter.",
       tags: ["Havsnivå", "Klimatanpassning", "Skåne", "3D"],
       appUrl: "/lab/havsniva-klimatanpassning/",
+      appHeading: "En interaktiv havsnivåmodell för Skåne.",
+      appLinkText: "Öppna havsnivåmodellen",
       description: "Modellen visar markytor som kan nås av havet vid vald nivå. Höjddata kommer från Lantmäteriets markhöjdmodell och är webboptimerad för regional översikt.",
       note: "Ett pedagogiskt scenario: det inkluderar inte stormflod, vågor, erosion, vallar eller avvattning."
     },
@@ -72,16 +74,20 @@
       id: "markreformer-agostruktur",
       title: "Markreformer och ägostruktur",
       category: "Mark och ägande",
-      status: "Idé",
-      summary: "Idéer och analyser kring markanvändning, fastighetsstruktur och framtida reformer.",
+      status: "Prototyp",
+      summary: "En interaktiv karta som testar hur mark kan frigöras inom varje fastighet och omfördelas till sammanhängande GC-stråk längs vägar.",
       subtopics: ["Omvänt skifte"],
-      tags: ["Fastigheter", "Markanvändning", "Reformidéer"],
+      tags: ["Fastigheter", "Markanvändning", "GC-stråk", "Reformidéer"],
+      appUrl: "https://omvanda-skiftet.streamlit.app/",
+      appHeading: "Testa omvänt skifte i en interaktiv karta.",
+      appLinkText: "Öppna Omvända skiftet",
+      description: "Välj hur stor andel mark som ska frigöras, vilka fastigheter som ska ingå och hur ytan ska omfördelas. I GC-läget koncentreras den frigjorda ytan geometriskt mot vägar inom respektive fastighet.",
+      note: "Prototypen är ett geografiskt tankeexperiment och inte ett juridiskt underlag eller ett förslag om enskilda markägare.",
       questions: [
         "Hur påverkar dagens ägostruktur möjligheten att planera långsiktigt?",
         "Var kan samlad eller omfördelad mark skapa större landskapsnytta?",
         "Hur skulle ett omvänt skifte kunna visualiseras som planeringsidé?"
-      ],
-      emptyMessage: "Det här projektet är ännu bara en idé i Labbet. Omvänt skifte ligger här som ett underämne och kan senare bli en egen analys, karta eller prototyp."
+      ]
     }
   ];
 })();

@@ -159,10 +159,10 @@
     mainPanel.appendChild(createElement("p", "card-label", project.status));
 
     if (project.appUrl) {
-      mainPanel.appendChild(createElement("h2", "", "En interaktiv havsnivåmodell för Skåne."));
+      mainPanel.appendChild(createElement("h2", "", project.appHeading || "Öppna den interaktiva prototypen."));
       mainPanel.appendChild(createElement("p", "", project.description || project.summary));
       mainPanel.appendChild(createElement("p", "", project.note || ""));
-      var appLink = createElement("a", "button button-primary", "Öppna havsnivåmodellen");
+      var appLink = createElement("a", "button button-primary", project.appLinkText || "Öppna prototypen");
       appLink.href = project.appUrl;
       mainPanel.appendChild(appLink);
     } else {
