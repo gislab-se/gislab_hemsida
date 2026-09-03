@@ -359,8 +359,7 @@ h3 {
   color: var(--surface);
 }
 
-.trust-list,
-.tag-list {
+.trust-list {
   display: flex;
   flex-wrap: wrap;
   gap: 0.55rem;
@@ -372,8 +371,7 @@ h3 {
   margin: 1.2rem 0 0;
 }
 
-.trust-list li,
-.tag-list li {
+.trust-list li {
   min-height: 1.75rem;
   padding: 0.25rem 0.58rem;
   border: 1px solid var(--line);
@@ -391,7 +389,6 @@ h3 {
 }
 
 .section,
-.search-strip,
 .collaboration,
 .contact {
   width: min(1180px, calc(100% - 48px));
@@ -820,28 +817,6 @@ h3 {
   margin-top: 0.55rem;
 }
 
-.search-strip {
-  display: grid;
-  grid-template-columns: minmax(240px, 0.6fr) minmax(0, 1fr);
-  gap: 1.2rem;
-  align-items: center;
-  margin-top: 0.5rem;
-  margin-bottom: 2rem;
-  padding: 1.15rem;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: #ebe8df;
-}
-
-.search-strip h2 {
-  font-size: clamp(1.55rem, 2.4vw, 2rem);
-}
-
-.tag-list {
-  justify-content: flex-end;
-  margin: 0;
-}
-
 .collaboration {
   display: grid;
   grid-template-columns: minmax(260px, 0.62fr) minmax(0, 1fr);
@@ -998,7 +973,6 @@ h3 {
 
   .section,
   .flagship,
-  .search-strip,
   .collaboration,
   .contact {
     width: calc(100% - 32px);
@@ -1019,7 +993,6 @@ h3 {
   }
 
   .section-heading,
-  .search-strip,
   .collaboration,
   .contact {
     grid-template-columns: 1fr;
@@ -1027,10 +1000,6 @@ h3 {
 
   .section-heading .eyebrow {
     margin-bottom: -0.45rem;
-  }
-
-  .tag-list {
-    justify-content: flex-start;
   }
 
   .lab-feature,
