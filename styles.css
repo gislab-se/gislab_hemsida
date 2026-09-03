@@ -883,6 +883,27 @@ h3 {
   color: var(--green-dark);
 }
 
+.collab-logo {
+  display: block;
+  width: 100%;
+  max-width: 12rem;
+  height: 3rem;
+  margin-bottom: 0.55rem;
+  object-fit: contain;
+  object-position: left center;
+  border-radius: 3px;
+}
+
+.collab-thumbnail {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 7;
+  margin-bottom: 0.55rem;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 3px;
+}
+
 .collab-link span {
   font-weight: 850;
 }
