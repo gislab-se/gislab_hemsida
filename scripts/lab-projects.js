@@ -3,6 +3,15 @@
 
   window.GISLAB_LAB_PROJECTS = [
     {
+      id: "agroforestry",
+      title: "Agroforestry",
+      category: "Jordbruk och landskap",
+      status: "Prototyp",
+      summary: "Planera valnötsträd längs höjdkurvor i Sörby. Justera kopplade rad- och trädavstånd, granska planteringsytan och behåll 150 träd per hektar.",
+      tags: ["Agroforestry", "Valnöt", "Höjdkurvor"],
+      url: "/lab/agroforestry/"
+    },
+    {
       id: "vattenforbrukning-vattern",
       title: "Vattenförbrukning i Vättern",
       category: "Vatten och resurser",
