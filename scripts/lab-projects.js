@@ -3,6 +3,15 @@
 
   window.GISLAB_LAB_PROJECTS = [
     {
+      id: "regionkarta",
+      title: "Regionkartan – Greater Copenhagen",
+      category: "Regional analys",
+      status: "Pågående projekt",
+      summary: "En interaktiv regionkarta under utveckling för att utforska regionala avgränsningar och befolkningsmönster i bland annat Greater Copenhagen.",
+      tags: ["Greater Copenhagen", "Skåne", "Befolkning", "Webbkarta"],
+      url: "/lab/regionkarta/"
+    },
+    {
       id: "stockholm-torsboda",
       title: "Stockholm × Torsboda",
       category: "Energi och samhälle",

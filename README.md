@@ -7,6 +7,7 @@ Källkod och publicerade resurser för [gislab.se](https://gislab.se/), GISLabs 
 - [Svensk startsida](https://gislab.se/)
 - [English start page](https://gislab.se/en/)
 - [Labbet](https://gislab.se/lab/)
+- [Regionkartan – Greater Copenhagen (pågående projekt)](https://gislab.se/lab/regionkarta/)
 - [Stockholm × Torsboda](https://gislab.se/lab/stockholm-torsboda/)
 - [Havsnivå och klimatanpassning](https://gislab.se/lab/havsniva-klimatanpassning/)
 - [Sälenfjällen i 3D](https://gislab.se/lab/salenfjallen-3d/)
@@ -33,6 +34,14 @@ python -m http.server 8000
 ## Publicering
 
 Repo:t publiceras via GitHub Pages med den anpassade domänen `gislab.se`. Kontrollera att interna länkar och publika appar fungerar innan ändringar förs till `main`.
+
+## Söksynlighet
+
+Startsidorna har svenska respektive engelska titlar, beskrivningar och ömsesidiga `hreflang`-länkar. Svenska sidan beskriver den lokala basen i Simrishamn på Österlen; båda sidorna välkomnar internationella uppdrag. Uppdatera titel, beskrivning och motsvarande Open Graph/Twitter-fält tillsammans.
+
+`sitemap.xml` listar de publika sidor som ska kunna indexeras. Lägg till nya projektsidor där och ändra `lastmod` när sidans innehåll ändras. Behåll omdirigeringen `/klimatinitiativet/` utanför sidkartan. Regionkartans presentation ligger publikt på `/lab/regionkarta/`; den externa prototypen kräver för närvarande ChatGPT-inloggning.
+
+Efter publicering: skicka `https://gislab.se/sitemap.xml` i Google Search Console, använd webbadressgranskning för ändrade sidor och begär indexering. Domänverifiering och begäran om indexering kräver tillgång till rätt Search Console-egendom. Följ sökfrågor, länder, exponeringar och klick i resultatrapporten.
 
 
 ## Stockholm × Torsboda
