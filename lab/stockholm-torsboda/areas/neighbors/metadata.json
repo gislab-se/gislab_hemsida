@@ -1,0 +1,82 @@
+{
+  "id": "neighbors",
+  "name": "Stockholm + kranskommuner",
+  "width": 620,
+  "height": 393,
+  "x0": 4742400,
+  "y0": 4069700,
+  "cell_size_m": 100,
+  "source_cell_size_m": 100,
+  "center": [
+    18.0717,
+    59.3267
+  ],
+  "max_radius_m": 25000,
+  "max_center_distance_m": 15000,
+  "default_radius_m": 9416.2,
+  "coordinate_scale": 10000000,
+  "coordinate_delta_encoded": true,
+  "population_type": "Int16",
+  "source_stats": {
+    "population": 1652914,
+    "cells": 121026,
+    "populated": 36977,
+    "zero": 75054,
+    "nodata": 8995
+  },
+  "municipalities": [
+    {
+      "code": "0123",
+      "name": "Järfälla"
+    },
+    {
+      "code": "0125",
+      "name": "Ekerö"
+    },
+    {
+      "code": "0126",
+      "name": "Huddinge"
+    },
+    {
+      "code": "0138",
+      "name": "Tyresö"
+    },
+    {
+      "code": "0162",
+      "name": "Danderyd"
+    },
+    {
+      "code": "0163",
+      "name": "Sollentuna"
+    },
+    {
+      "code": "0180",
+      "name": "Stockholm"
+    },
+    {
+      "code": "0182",
+      "name": "Nacka"
+    },
+    {
+      "code": "0183",
+      "name": "Sundbyberg"
+    },
+    {
+      "code": "0184",
+      "name": "Solna"
+    },
+    {
+      "code": "0186",
+      "name": "Lidingö"
+    }
+  ],
+  "year": 2021,
+  "boundary_year": 2026,
+  "source": "JRC-ESTAT_Census_Population_2021_100m_rev0726.tif",
+  "source_url": "https://doi.org/10.2905/98336641-fd1c-4992-8c7b-c470dd5eb81e",
+  "boundary_source": "Lantmäteriet via Region Stockholm",
+  "boundary_source_url": "https://services2.arcgis.com/uM75dQp2RlOXWzhF/ArcGIS/rest/services/Kommungr%C3%A4nser_2026/FeatureServer/1",
+  "boundary_query_url": "https://services2.arcgis.com/uM75dQp2RlOXWzhF/ArcGIS/rest/services/Kommungr%C3%A4nser_2026/FeatureServer/1/query?where=Lanskod%3D%2701%27&outFields=*&outSR=4326&f=geojson",
+  "license": "Population: CC BY 4.0",
+  "selection": "Original 100 m cell centers within the union of municipality polygons. Each cell retains its original location, footprint and population count. No aggregation, resampling, smoothing, extrapolation or device-based omission."
+}

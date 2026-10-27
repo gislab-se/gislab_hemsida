@@ -1,0 +1,142 @@
+{
+  "id": "county",
+  "name": "Stockholms län – samtliga 26 kommuner",
+  "width": 1515,
+  "height": 2082,
+  "x0": 4734700,
+  "y0": 4166000,
+  "cell_size_m": 100,
+  "source_cell_size_m": 100,
+  "center": [
+    18.0717,
+    59.3267
+  ],
+  "max_radius_m": 25000,
+  "max_center_distance_m": 15000,
+  "default_radius_m": 9416.2,
+  "coordinate_scale": 10000000,
+  "coordinate_delta_encoded": true,
+  "population_type": "Int16",
+  "source_stats": {
+    "population": 2409690,
+    "cells": 1681116,
+    "populated": 102920,
+    "zero": 607287,
+    "nodata": 970909
+  },
+  "municipalities": [
+    {
+      "code": "0114",
+      "name": "Upplands Väsby"
+    },
+    {
+      "code": "0115",
+      "name": "Vallentuna"
+    },
+    {
+      "code": "0117",
+      "name": "Österåker"
+    },
+    {
+      "code": "0120",
+      "name": "Värmdö"
+    },
+    {
+      "code": "0123",
+      "name": "Järfälla"
+    },
+    {
+      "code": "0125",
+      "name": "Ekerö"
+    },
+    {
+      "code": "0126",
+      "name": "Huddinge"
+    },
+    {
+      "code": "0127",
+      "name": "Botkyrka"
+    },
+    {
+      "code": "0128",
+      "name": "Salem"
+    },
+    {
+      "code": "0136",
+      "name": "Haninge"
+    },
+    {
+      "code": "0138",
+      "name": "Tyresö"
+    },
+    {
+      "code": "0139",
+      "name": "Upplands-Bro"
+    },
+    {
+      "code": "0140",
+      "name": "Nykvarn"
+    },
+    {
+      "code": "0160",
+      "name": "Täby"
+    },
+    {
+      "code": "0162",
+      "name": "Danderyd"
+    },
+    {
+      "code": "0163",
+      "name": "Sollentuna"
+    },
+    {
+      "code": "0180",
+      "name": "Stockholm"
+    },
+    {
+      "code": "0181",
+      "name": "Södertälje"
+    },
+    {
+      "code": "0182",
+      "name": "Nacka"
+    },
+    {
+      "code": "0183",
+      "name": "Sundbyberg"
+    },
+    {
+      "code": "0184",
+      "name": "Solna"
+    },
+    {
+      "code": "0186",
+      "name": "Lidingö"
+    },
+    {
+      "code": "0187",
+      "name": "Vaxholm"
+    },
+    {
+      "code": "0188",
+      "name": "Norrtälje"
+    },
+    {
+      "code": "0191",
+      "name": "Sigtuna"
+    },
+    {
+      "code": "0192",
+      "name": "Nynäshamn"
+    }
+  ],
+  "year": 2021,
+  "boundary_year": 2026,
+  "source": "JRC-ESTAT_Census_Population_2021_100m_rev0726.tif",
+  "source_url": "https://doi.org/10.2905/98336641-fd1c-4992-8c7b-c470dd5eb81e",
+  "boundary_source": "Lantmäteriet via Region Stockholm",
+  "boundary_source_url": "https://services2.arcgis.com/uM75dQp2RlOXWzhF/ArcGIS/rest/services/Kommungr%C3%A4nser_2026/FeatureServer/1",
+  "boundary_query_url": "https://services2.arcgis.com/uM75dQp2RlOXWzhF/ArcGIS/rest/services/Kommungr%C3%A4nser_2026/FeatureServer/1/query?where=Lanskod%3D%2701%27&outFields=*&outSR=4326&f=geojson",
+  "license": "Population: CC BY 4.0",
+  "selection": "Original 100 m cell centers within the union of municipality polygons. Each cell retains its original location, footprint and population count. No aggregation, resampling, smoothing, extrapolation or device-based omission."
+}

@@ -3,6 +3,15 @@
 
   window.GISLAB_LAB_PROJECTS = [
     {
+      id: "stockholm-torsboda",
+      title: "Stockholm × Torsboda",
+      category: "Energi och samhälle",
+      status: "Prototyp",
+      summary: "En interaktiv 3D-karta där Stockholms befolkning jämförs med antagna effektnivåer för ett datacenter vid Torsboda. Utforska geografiska områden, effekt och markyta i en symbolisk animation.",
+      tags: ["Stockholm", "Torsboda", "Effekt", "3D"],
+      url: "/lab/stockholm-torsboda/"
+    },
+    {
       id: "agroforestry",
       title: "Agroforestry",
       category: "Jordbruk och landskap",

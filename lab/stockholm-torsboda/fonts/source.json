@@ -1,0 +1,9 @@
+{
+  "family": "Fraunces",
+  "authors": "Phaedra Charles and Flavia Zimbardi, Undercase Type",
+  "source": "https://github.com/google/fonts/tree/main/ofl/fraunces",
+  "license": "SIL Open Font License 1.1",
+  "sourceSha256": "177ff6c0f14e5550a3c624247cd1189611d4eb65d000b14944c63d967958abbb",
+  "derivative": "Stockholm Figures: static 600 / opsz 32 / SOFT 55 / WONK 1, digit outlines centered in equal-width advances; renamed and subset to U+0030–0039 for stable projection statistics. Original Fraunces font remains unmodified.",
+  "digitAdvance": 1338
+}

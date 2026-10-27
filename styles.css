@@ -1134,3 +1134,30 @@ h3 {
     transition: none;
   }
 }
+
+/* The digital tools service card opens the Stockholm–Torsboda map. */
+.service-link {
+  display: block;
+  color: var(--ink);
+  text-decoration: none;
+}
+.service-link:hover { color: var(--ink); }
+.service-link:hover h3, .service-link:focus-visible h3 {
+  text-decoration: underline;
+  text-decoration-color: var(--green);
+  text-underline-offset: .18em;
+}
+.service-link:focus-visible {
+  outline: 3px solid var(--green);
+  outline-offset: 6px;
+  border-radius: 3px;
+}
+.service-action {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  margin-top: 1rem;
+  color: var(--green);
+  font-size: .88rem;
+  font-weight: 700;
+}

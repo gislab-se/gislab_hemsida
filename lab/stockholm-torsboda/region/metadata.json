@@ -1,0 +1,24 @@
+{
+  "width": 827,
+  "height": 824,
+  "x0": 4739000.0,
+  "y0": 4092400.0,
+  "cell_size_m": 100,
+  "crs": "EPSG:3035",
+  "center": [
+    18.0717,
+    59.3267
+  ],
+  "max_radius_m": 25000,
+  "max_center_distance_m": 15000,
+  "default_radius_m": 9416.2,
+  "source": "JRC-ESTAT_Census_Population_2021_100m_rev0726.tif",
+  "year": 2021,
+  "population_valid": 527490,
+  "population_total": 2359091,
+  "coordinate_scale": 10000000,
+  "coordinate_delta_encoded": true,
+  "binary_format": "Little-endian, row-major. Original Int16 cell counts; -1 = NoData. Positions are Int32 lon/lat pairs divided by coordinate_scale.",
+  "source_url": "https://doi.org/10.2905/98336641-fd1c-4992-8c7b-c470dd5eb81e",
+  "license": "CC BY 4.0"
+}

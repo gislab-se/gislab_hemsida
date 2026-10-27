@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0a1522">
+  <meta name="description" content="Utforska Stockholms befolkning i 3D och simulera effektbehov. Flytta mittpunkten, välj radie och släck geografiska grupper stegvis.">
+  <title>Stockholm × Torsboda · En effektjämförelse | GISLab</title>
+  <link rel="canonical" href="https://gislab.se/lab/stockholm-torsboda/">
+  <meta property="og:title" content="Stockholm × Torsboda | GISLab">
+  <meta property="og:description" content="En interaktiv 3D-karta och symbolisk effektjämförelse mellan Stockholms befolkning och ett datacenter vid Torsboda. Antaganden och källor redovisas i kartan.">
+  <meta property="og:url" content="https://gislab.se/lab/stockholm-torsboda/">
+  <link rel="preload" href="fonts/Fraunces-variable.ttf" as="font" type="font/ttf" crossorigin><link rel="preload" href="fonts/StockholmFigures.ttf" as="font" type="font/ttf" crossorigin><link rel="stylesheet" href="vendor/maplibre-gl.css"><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="simulation.css"><link rel="stylesheet" href="torsboda.css"><link rel="stylesheet" href="presentation.css">
+</head>
+<body class="settings-hidden presentation-mode">
+<main>
+  <div id="map" role="region" aria-label="Interaktiv befolkningskarta över Stockholm. Dra för att panorera, scrolla för att zooma." tabindex="0"></div>
+  <button id="settings-reopen" aria-controls="settings-panel">Visa inställningar</button>
+  <button id="activate-presentation" hidden>Aktivera ljud och helskärm</button>
+  <aside id="settings-panel" class="panel panel-compact" aria-label="Kartinställningar">
+    <header><button id="panel-toggle" aria-expanded="false">Visa inställningar</button></header>
+    <p class="assumption-badge">ANTAGANDEN · SYMBOLISK EFFEKTJÄMFÖRELSE</p>
+    <p id="animation-status" class="animation-status" role="status" aria-live="polite">Redo att spela</p>
+    <div class="main-playback"><button id="scenario-play" aria-pressed="false" disabled>Spela släckningen</button><button id="scenario-stop" disabled>Stopp</button></div>
+    <div class="numbers"><div><strong id="total">—</strong><span>uppskattade invånare</span></div><div><strong id="radius">—</strong><span id="area-metric-label">vald radie</span></div></div>
+    <div class="settings">
+      <div class="tabs" role="tablist" aria-label="Inställningar"><button id="tab-area" role="tab" aria-selected="true" aria-controls="area-settings" tabindex="0">Område</button><button id="tab-power" role="tab" aria-selected="false" aria-controls="power-settings" tabindex="-1">Effekt</button><button id="tab-playback" role="tab" aria-selected="false" aria-controls="playback-settings" tabindex="-1">Spela</button><button id="tab-view" role="tab" aria-selected="false" aria-controls="view-settings" tabindex="-1">Visning</button></div>
+      <section id="area-settings" role="tabpanel" aria-labelledby="tab-area">
+        <p id="area-description" class="secondary">Originalrutor: 100 × 100 m.</p><label for="area-type">Välj område</label>
+        <select id="area-type" disabled><option value="circle">Fritt cirkelområde</option><option value="municipality" selected>Stockholms stad (kommun)</option><option value="neighbors">Stockholm + kranskommuner</option><option value="county">Stockholms län – samtliga 26 kommuner</option></select>
+        <p id="regional-help" class="municipality-help secondary" hidden></p>
+        <details id="regional-members" hidden><summary id="regional-members-title">Kommuner som ingår</summary><p id="regional-members-list"></p><p><a href="https://www.arcgis.com/home/item.html?id=b60d49cf9f6843cc8d8f70319e8f32fc" target="_blank" rel="noopener">Kommungränser: Lantmäteriet via Region Stockholm</a></p></details>
+        <p id="municipality-help" class="municipality-help secondary" hidden>Stockholms kommun, kod 0180. Hela 100-metersrutor tas med när mittpunkten ligger inom kommungränsen. Gräns: 2026 · befolkning: 2021. Rutornas summa är en skattning och kan avvika från SCB:s officiella folkmängd.<br><a href="https://www.arcgis.com/home/item.html?id=b60d49cf9f6843cc8d8f70319e8f32fc" target="_blank" rel="noopener">Kommungräns: Lantmäteriet via Region Stockholm</a></p>
+        <p id="area-counts" class="secondary">Läser området…</p>
+        <div id="circle-settings">
+        <div class="label-row"><label for="radius-control">Radie</label><output id="radius-value" for="radius-control">9,4 km</output></div>
+        <input id="radius-control" type="range" min="0.25" max="25" step="0.05" value="9.4162" disabled>
+        <label for="population-target">Eller välj antal invånare</label>
+        <form id="population-form" class="input-action"><input id="population-target" type="number" min="1" max="3000000" step="1" value="1000000" required aria-describedby="population-help" disabled><button id="population-apply" type="submit" disabled>Välj</button></form>
+        <p id="population-help" class="secondary">Radien väljs så att minst detta antal ingår, inom kartans gränser.</p>
+        <div class="label-row"><span>Mittpunkt</span><span id="center-name" class="secondary">Kungliga slottet</span></div>
+        <div class="view-buttons"><button id="pick-center" aria-pressed="false" disabled>Välj på kartan</button><button id="palace" disabled>Till slottet</button></div>
+        <p class="secondary center-help">Dra den vita markören, eller välj en punkt på kartan. Mittpunkten kan flyttas högst 15 km från slottet.</p>
+        </div>
+        <button id="fit-area" class="wide" disabled>Visa hela området</button>
+      </section>
+      <section id="playback-settings" role="tabpanel" aria-labelledby="tab-playback" hidden>
+        <div class="comparison-modes" role="group" aria-label="Välj jämförelseläge"><button id="mode-torsboda" aria-pressed="true" disabled>Torsboda</button><button id="mode-free" aria-pressed="false" disabled>Fri effekt</button></div>
+        <div id="torsboda-controls">
+          <div class="scenario-buttons" role="group" aria-label="Torsbodas scenarier"><button data-mw="650" disabled><strong>650 MW</strong><span>Initialt scenario</span></button><button data-mw="1000" disabled><strong>1 000 MW</strong><span>Målnivå</span></button><button data-mw="2000" disabled><strong>2 000 MW</strong><span>Möjlig expansion</span></button></div>
+          <div class="field-pair"><div><label for="target-mw">Måleffekt (MW)</label><input id="target-mw" type="number" min="1" max="2000" step="1" value="2000" disabled></div><div><label for="duration">Tid per varv (sek)</label><input id="duration" type="number" min="5" max="300" step="1" value="60" disabled></div></div>
+          <label class="check"><input id="loop-playback" type="checkbox" checked disabled>Loopa tills jag stoppar</label>
+          <label class="check"><input id="sound-enabled" type="checkbox" checked disabled>Ljud · sinuston 100 Hz</label><div class="label-row"><label for="sound-volume">Maximal volym</label><output id="volume-value" for="sound-volume">100 %</output></div><input id="sound-volume" type="range" min="0" max="100" step="1" value="100" disabled><p id="sound-status" class="secondary">100 Hz · tyst när uppspelningen är pausad</p>
+          <p class="secondary">100 Hz-tonen växer från 50 till 100 procent av vald maxvolym med datacentrets effekt. Mellan varven går ljudet mjukt tillbaka till 50 procent. Paus och stopp tonar ut till tystnad.</p>
+          <p id="scenario-note" class="secondary">Planerade effektnivåer, inte uppmätt förbrukning. Varje varv börjar med alla rutor tända. När området är släckt slutar effekt och yta att öka. Nästa varv återställer allt automatiskt. Angiven tid inkluderar start- och slutpaus. Esc pausar direkt.</p>
+          <label for="hectares-preset">Referens för markyta</label><select id="hectares-preset" disabled><option value="214">214 ha · all mark i bolaget</option><option value="140">140 ha · detaljplanerad mark</option><option value="custom">Eget ytantal</option></select>
+          <label for="hectares">Antagen målarea för vald måleffekt (ha)</label><input id="hectares" type="number" min="0.1" max="10000" step="any" value="214" disabled>
+          <p class="secondary">Torsbodabolaget uppger 214 ha totalt, varav 140 ha detaljplanerad mark. Detta är markyta, inte byggnadsarea. Ytans expansion är en separat illustration; hektar per effektnivå är inte fastställt. <a href="https://www.torsboda.com/nyheter/google-och-torsboda-industrial-park-forbereder-affar" target="_blank" rel="noopener">Källa: Torsboda Industrial Park</a>.</p>
+          <label for="datacenter-height">Dramatiserad sluthöjd (meter)</label><input id="datacenter-height" type="number" min="0" max="1000" step="1" value="100" disabled>
+          <div class="view-buttons"><button id="place-datacenter" aria-pressed="false" disabled>Placera på kartan</button><button id="show-datacenter" disabled>Visa datacentret</button><button id="reset-datacenter" disabled>Till Djurgården</button></div>
+          <p class="secondary">Datacentret är ett flyttbart illustrationsobjekt i kartans skala. Dra dess markör eller välj en ny plats på kartan. Höjden växer till vald sluthöjd vid scenariots slutläge och är dramatiserad. Markavtrycket förblir skalenligt. Objektet förstoras inte vid låg zoom.</p>
+<p class="secondary">Samma schematiska fyrkant visas även på Torsbodas geografiska plats. Kopiorna visar samma antagna yta, höjd och effekt och räknas som ett enda datacenter.</p>
+          <details class="manual-controls"><summary>Justera förloppet manuellt</summary><div class="label-row"><label for="torsboda-control">Effekt till Torsboda</label><output id="torsboda-value" for="torsboda-control">0 MW</output></div><input id="torsboda-control" type="range" min="0" max="2000" step="1" value="0" disabled><div class="label-row"><label for="land-progress">Illustrerad utbyggnad</label><output id="land-value" for="land-progress">0 ha</output></div><input id="land-progress" type="range" min="0" max="1000" step="1" value="0" disabled><p class="secondary">Yta och effekt kan justeras oberoende. Under uppspelning följer båda scenariots förlopp, utan att det beskriver ett verkligt byggprogram.</p></details>
+        </div>
+        <div id="free-controls" hidden><div class="label-row"><label for="supply-control">Tillgänglig effekt i modellen</label><output id="supply-value" for="supply-control">— MW</output></div><input id="supply-control" type="range" min="0" max="1000" step="1" value="1000" aria-describedby="supply-help" disabled><p id="supply-help" class="secondary">Dra åt vänster för att släcka grupper utifrån och in.</p></div>
+        <div class="view-buttons"><button id="all-on" disabled>Tänd allt / återställ</button><button id="show-torsboda" disabled>Visa Torsboda</button></div>
+      </section>
+      <section id="power-settings" role="tabpanel" aria-labelledby="tab-power" hidden>
+        <label for="assumption-preset">Antaget effektbehov för Stockholms stad</label>
+        <select id="assumption-preset" aria-describedby="assumption-help" disabled><option value="1022">1 000 MW → 1 022 W/person</option><option value="1635">1 600 MW → 1 635 W/person</option><option value="custom">Eget antagande</option></select>
+        <p id="assumption-help" class="secondary">Mejlets intervall 1 000–1 600 MW delat med stadens 978 770 invånare år 2021, avrundat till hela W. Effektuppgiften är ett antagande och har inte verifierats för 2021.</p>
+        <label for="watts">Antagen effekt per invånare (W/person)</label><input id="watts" type="number" min="1" max="10000" step="1" value="1022" disabled>
+        <p class="secondary">Stadens samlade effekt fördelas över invånarna, inklusive ett schablonmässigt påslag för verksamheter och infrastruktur. Vid fritt cirkelområde används samma schablon även utanför Stockholms kommun.</p>
+        <div class="field-pair"><div><label for="group-unit">Gruppstorlek i</label><select id="group-unit" disabled><option value="mw">MW</option><option value="people" selected>Invånare</option></select></div><div><label for="group-size">Mål per grupp</label><input id="group-size" type="number" min="100" max="1000000" step="1" value="4000" disabled></div></div>
+        <p id="equivalence" class="equivalence">1 MW ≈ 978 invånare</p>
+        <p id="group-summary" class="secondary"></p><p id="group-range" class="secondary"></p>
+        <p class="secondary">Organiska, sammanhängande områden anpassade efter befolkningen. Storleken varierar för att hålla formerna kompakta. Hela 100-metersrutor behålls.</p>
+        <p class="secondary">Grupperna kan omfatta vatten och obebodda rutor. De är modellområden, inte administrativa stadsdelar eller verkliga elnätsområden.</p>
+        <p class="secondary">MW beskriver effekt. Under en timme motsvarar 1 MW en energimängd på 1 MWh.</p>
+      </section>
+      <section id="view-settings" role="tabpanel" aria-labelledby="tab-view" hidden>
+        <div class="view-buttons"><button id="presentation-fullscreen" disabled>Helskärm</button><button id="presentation-view" disabled>Återställ presentationsvy</button><button id="presentation-mute" disabled>Ljud av/på</button></div>
+        <p id="presentation-help" class="secondary">Mellanslag: spela/pausa · M: ljud · R: presentationsvy · F: helskärm · Esc: pausa. Vid minskad rörelse startar inga animationer automatiskt.</p>
+        <div class="label-row"><label for="height">Stapelhöjd</label><output id="height-value" for="height">1×</output></div><input id="height" type="range" min="0.1" max="2" step="0.1" value="1" disabled>
+        <p class="secondary">Varje stapel visar en originalruta på 100 × 100 m med oförändrat invånarantal. Höjden följer invånarantalet, även i släckta grupper.</p>
+        <div class="view-buttons"><button id="three-d" class="active" aria-pressed="true" disabled>3D-vy</button><button id="top-down" aria-pressed="false" disabled>Ovanifrån</button><button id="reset" disabled>Återställ allt</button></div>
+        <div class="legend" aria-label="Befolkningstäthet"><h2>Invånare per 100 × 100 m</h2><div class="gradient"></div><div class="ticks"><span>1</span><span>50</span><span>200</span><span>500</span><span>1 000+</span></div><div class="keys"><span><i class="zero"></i>0 invånare</span><span><i class="missing"></i>Data saknas</span><span><i class="dark"></i>Släckt</span></div></div>
+        <p id="performance" class="secondary"></p>
+      </section>
+      <p id="limit-notice" class="notice" role="status" hidden></p>
+      <p class="secondary"><a href="/lab/">← Till Labbet på GISLab</a></p>
+      <details><summary>Om datan och antagandena</summary><p>Stockholms stads grundbehov i modellen är kommunrutornas befolkning × valt W/person-antagande. Kvarvarande effekt = max(0, grundbehov − datacentrets aktuella MW). Stadens verkliga effektbehov ändras inte av illustrationen. Hela grupper släcks åt gången, så en liten kvarvarande effekt kan vara otillräcklig för att hålla sista gruppen tänd. I andra områdesval följer siffran det valda områdets modellbehov.</p><p>Datacentrets kropp är obsidiansvart med gyllene halo. Sluthöjden är dramatiserad till 100 m som förval; både höjd och ljus växer till scenariots slutläge. Hektar följer det separata antagandet om målarea. Ljudets 100 Hz-ton växer till ett crescendo med datacentrets effekt och följer reglaget för maximal volym. Typsnittet Fraunces och de fastbreda sifferformerna Stockholm Figures är lokalt paketerade under SIL Open Font License. Bakgrundskartans ortnamn ingår i rasterbilderna och har kartleverantörens typografi.</p><p><strong>Symbolisk jämförelse.</strong> Torsboda tar inte bokstavligen el från Stockholm. Släckningen är ingen prognos för strömavbrott.</p><p>I administrativa vyer beskärs vatten ur visningsmasken och konturerna med Lantmäteriets generaliserade Topografi 250. Befolkningsrutor, värden och områdessummor påverkas inte. NoData används inte för att avgöra vad som är vatten. <a href="https://geotorget.lantmateriet.se/geodataprodukter/topografi-250-nedladdning-vektor" target="_blank" rel="noopener">Lantmäteriet · landunderlag (CC0)</a>.</p><p>Befolkningsvärdena är modellskattningar från JRC/ESTAT 2021, nedskalade från folkräkningens 1-km-rutor. Svenskt referensdatum: 31 december 2021.</p><p>Rutornas mittpunkter avgör om de ingår i den geodetiska cirkeln eller Stockholms kommunpolygon (gräns 2026, Lantmäteriet via Region Stockholm). Kommunens rutsumma kan avvika från SCB:s officiella folkmängd. Invånarantalen omsamplas inte. Saknade data räknas inte som noll invånare.</p><p>Antagandet 1 000–1 600 MW för Stockholms stad kommer från presentationsunderlaget. Det är inte verifierat som stadens effektbehov för 2021. Delat med 978 770 invånare (SCB, 2021) blir det cirka 1 022–1 635 W/person. Formeln är MW = invånare × W/person / 1 000 000. Fördelningen av stadens totala effekt över invånarna är en schablon; enskilda verksamheter, pendling, nätkapacitet och tidsvariation modelleras inte. Cirkelområdet är inte en kommungräns.</p><p>Torsbodas 650 MW, 1 000 MW och upp till 2 000 MW visas som initialt scenario, målnivå respektive möjlig framtida expansion. De är inte uppmätt förbrukning. Datacentret är ett flyttbart 3D-objekt med ett geografiskt markavtryck i hektar och en antagen höjd i meter. Det förstoras inte vid låg zoom. En fast kopia av samma schematiska fyrkant visas vid Torsboda. De två objekten representerar ett enda datacenter och räknas bara en gång. Inga fastighetsgränser eller faktiska byggnadsformer avbildas. Hektar och effekt är separata antaganden; glöden följer MW. Linjerna och släckningen är en visuell metafor, inte faktiska elflöden, en utbyggnadsprognos eller en prognos för strömavbrott. Datacentret tar inte bokstavligen el från Stockholm.</p><p>I jämförelsen dras Torsbodas valda MW-tal från kartområdets modellbehov. Negativ tillgänglig effekt begränsas till noll. Under uppspelning ökar effekt och yta tills målet nås eller sista befolkningsgruppen är släckt; därefter hålls slutläget tills nästa varv återställer allt. Grupperna släcks utifrån och in. Hela grupper släcks eller tänds; ett restbelopp kan därför bli oanvänt. Släckningsordningen är vald för illustrationen.</p><p>Upp till 25 km radie, 15 km flytt av mittpunkten och cirka 800 grupper. Fritt cirkelområde kan begränsas efter enhet och uppmätt uppdateringstid. De administrativa områdena visar samtliga befolkade originalrutor.</p><p><a href="https://www.scb.se/pressmeddelande/stockholm-passerar-990-000-invanare/" target="_blank" rel="noopener">SCB · Stockholms stads folkmängd 2021</a><br><a href="https://www.svt.se/nyheter/lokalt/vasternorrland/regeringen-kallar-google-till-mote-om-datorhallar" target="_blank" rel="noopener">SVT · Torsbodas planerade effektnivåer</a></p><p><a href="https://doi.org/10.2905/98336641-fd1c-4992-8c7b-c470dd5eb81e" target="_blank" rel="noopener">JRC/ESTAT · datakälla</a> · CC BY 4.0<br>Pigaiani, Freire &amp; Batista (2024), Europeiska kommissionen, JRC.</p><p><a href="stockholm_population_100m.tif" download>Hämta ursprungligt 9,4-km-utklipp (GeoTIFF)</a></p></details>
+    </div>
+  </aside>
+  <svg id="energy-flow" class="energy-flow" aria-hidden="true"><defs><linearGradient id="flow-gradient" x1="0" y1="1" x2="1" y2="0"><stop stop-color="#63d9cc"/><stop offset="1" stop-color="#ffb35c"/></linearGradient></defs><g><path/><path/><path/></g></svg>
+  <div id="torsboda-direction" class="torsboda-direction"><span id="direction-arrow">↑</span><span id="direction-label">Torsboda</span></div>
+  <div class="right-rail">
+  <section class="simulation" aria-label="Symbolisk effektjämförelse med Torsboda">
+    <div class="scenario-statistics">
+      <div><strong id="stat-torsboda-mw">0 MW</strong><span>Datacentrets antagna effekt</span></div>
+      <div><strong id="stat-hectares">0 ha</strong><span>Datacentrets illustrerade markyta</span></div>
+      <div><strong id="lit-people">—</strong><span>invånare i tända rutor</span></div>
+      <div><strong id="stat-remaining-mw">— MW</strong><span id="stat-remaining-label">Kvarvarande effekt i Stockholm (modell)</span></div>
+    </div>
+  </section>
+  </div>
+  <div id="status" class="status" role="status" aria-live="polite">Läser befolkningsdatan…</div>
+  <div id="tile-warning" class="tile-warning" role="status" hidden>Bakgrundskartan kunde inte läsas. Befolkningsdatan visas fortfarande.</div>
+  <div class="help"><span><b>Dra</b> panorera</span><span><b>Scrolla</b> zooma</span><span><b>Högerdra / Ctrl + dra</b> rotera</span><span><b>Peka / tryck</b> läs värde</span></div>
+</main>
+<script src="vendor/maplibre-gl.js"></script><script src="geo.js"></script><script src="flow-route.js"></script><script src="model.js"></script><script src="comparison.js"></script><script src="datacenter-geometry.js"></script><script src="tone.js"></script><script src="explorer.js"></script>
+</body></html>

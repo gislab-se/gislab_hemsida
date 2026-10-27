@@ -1,0 +1,36 @@
+.assumption-badge{font-size:.63rem;letter-spacing:.04em;color:#ffcc91;border:1px solid #765535;background:#3a2a1d80;border-radius:5px;padding:7px 9px;margin:12px 0;line-height:1.4}
+.tile-warning{pointer-events:none;top:auto;bottom:12px;left:50%;font-size:.65rem;max-width:360px}.status{left:50%;top:20px;bottom:auto;max-width:400px}
+#assumption-help{margin:8px 0 16px}#area-type{margin-bottom:12px}.municipality-help{border-left:2px solid #63d9cc;padding-left:10px}
+.panel{width:350px;max-height:calc(100dvh - 48px);padding:20px}.numbers{margin:14px 0;padding:14px 0}.tabs{gap:4px}.tabs button{min-width:0;padding:7px 4px;font-size:.74rem}
+.main-playback{display:flex;gap:8px;margin-top:10px}.main-playback #scenario-play{flex:1;background:#63d9cc;border-color:#63d9cc;color:#082228;font-weight:600}.main-playback button{font-size:.8rem;min-height:38px;padding:7px 10px}
+#panel-toggle{display:block;min-height:28px;font-size:.7rem;margin:0 0 10px auto;padding:4px 8px}
+body.settings-hidden .panel{display:none}#settings-reopen{position:absolute;left:24px;top:24px;z-index:5;background:#102637f5;border-color:#63d9cc;box-shadow:0 4px 20px #0005;font-size:.8rem}
+.comparison-modes{display:flex;gap:6px;margin-bottom:14px}.comparison-modes button{flex:1;min-height:34px;padding:5px 9px;font-size:.8rem}.comparison-modes [aria-pressed=true]{background:#63d9cc;border-color:#63d9cc;color:#082228}
+.scenario-buttons{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin:2px 0 12px}.scenario-buttons button{padding:8px 3px;min-height:48px;border-color:#6b4f36;background:#32271e;color:#ffcf9c}.scenario-buttons button:hover,.scenario-buttons button[aria-pressed=true]{background:#604020;border-color:#ffc078}.scenario-buttons strong,.scenario-buttons span{display:block}.scenario-buttons strong{font-size:.8rem}.scenario-buttons span{font-size:.58rem;margin-top:3px}
+.manual-controls{margin:10px 0 16px}.manual-controls .label-row{margin-top:12px}.manual-controls input[type=range]{margin:7px 0}#torsboda-control,#land-progress{accent-color:#ffb666}#hectares-preset{margin:5px 0 12px}.field-pair{margin-top:14px}.field-pair label{font-size:.75rem}.check{font-size:.78rem}.panel .view-buttons{flex-wrap:wrap}.panel .view-buttons button{font-size:.75rem}
+.right-rail{position:absolute;right:24px;top:24px;width:270px;z-index:2;pointer-events:none}
+.right-rail .simulation{position:relative;inset:auto;width:100%;padding:20px;border-radius:14px;background:#0a1522f5;border:1px solid #294056;box-shadow:0 12px 48px #0004;pointer-events:auto}
+.scenario-statistics{display:grid;grid-template-columns:1fr 1fr;gap:20px 12px;margin:0}.scenario-statistics strong{display:block;color:#ffcc91;font-size:1.25rem;font-weight:600;letter-spacing:-.02em;white-space:nowrap}.scenario-statistics span{display:block;margin-top:4px;font-size:.65rem;line-height:1.4;color:#adc0ce}
+.scenario-statistics>div:nth-child(3) strong{color:#69d9d0}.scenario-statistics>div:nth-child(4) strong{color:#ffbf8c}
+.animation-status{font-size:.75rem;font-weight:500;color:#e9d2af;margin:10px 0 0}
+.energy-flow{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none;overflow:hidden}
+.energy-flow path{fill:none;stroke:url(#flow-gradient);stroke-width:1.7;stroke-dasharray:4 17;animation:energy-travel 2.5s linear infinite;animation-play-state:paused}.energy-flow path:nth-child(2){stroke-width:2.5;animation-delay:-.8s}.energy-flow path:nth-child(3){animation-delay:-1.6s}
+
+.animation-playing .energy-flow path{animation-play-state:running}
+.torsboda-direction{position:absolute;z-index:2;transform:translate(-50%,-50%);display:flex;align-items:center;gap:7px;background:#102637ee;border:1px solid #9c7146;border-radius:20px;color:#ffd49c;padding:7px 11px;font-size:.68rem;pointer-events:none;white-space:nowrap}
+#direction-arrow{display:inline-block;font-size:1.1rem;color:#ffbd76}@keyframes energy-travel{to{stroke-dashoffset:-126}}
+.maplibregl-ctrl-bottom-left{bottom:20px;left:16px}.help{display:none}.maplibregl-ctrl-bottom-left .maplibregl-ctrl{float:left;clear:none;margin-right:8px}.maplibregl-ctrl-scale{background:#0a1522cc!important;color:#c9dce8!important;border-color:#b7cad8!important;margin-top:4px!important}
+.datacenter-marker{position:relative;width:18px;height:18px;min-height:0;padding:0;border:0;background:transparent;box-shadow:none;cursor:grab}.datacenter-marker:active{cursor:grabbing}.datacenter-marker:hover{background:transparent}
+.datacenter-marker i{display:block;position:absolute;inset:3px;background:#ffd38a;border:1px solid #fff2d4;transform:rotate(45deg);box-shadow:0 0 calc(6px + var(--heat,0)*18px) #ff9c3b;pointer-events:none}.datacenter-marker span{position:absolute;top:20px;left:50%;transform:translateX(-50%);font-size:.67rem;white-space:nowrap;color:#ffe1ad;padding:4px 6px;background:#0a1522cf;pointer-events:none}
+.datacenter-marker[hidden],.palace-marker[hidden]{display:none!important}.datacenter-picking .maplibregl-canvas{cursor:crosshair!important}
+#sound-status{margin-top:5px}#sound-volume{margin:7px 0 0}
+@media(max-width:760px){
+ .right-rail{right:12px;top:12px;width:164px}.right-rail .simulation{padding:12px 10px;border-radius:12px}.scenario-statistics{gap:12px 6px}.scenario-statistics strong{font-size:.9rem}.scenario-statistics span{font-size:.55rem}
+ .panel{left:12px;top:auto;bottom:12px;width:calc(100vw - 24px);padding:16px;max-height:55dvh;z-index:4}.panel.panel-compact{top:12px;bottom:auto;width:calc(100vw - 198px);max-height:180px;padding:12px}
+ .panel-compact .main-playback,.panel-compact .assumption-badge,.panel-compact .animation-status{display:none}
+ #panel-toggle{width:auto;font-size:.67rem;margin:0;min-height:32px}.panel .assumption-badge{font-size:.61rem}.main-playback button{font-size:.8rem}.tabs button{font-size:.78rem}
+ #settings-reopen{left:12px;top:12px;max-width:calc(100vw - 198px);font-size:.7rem;min-height:32px;padding:6px 9px}
+ .status{top:auto;bottom:12px;left:50%;font-size:.7rem;max-width:calc(100vw - 24px)}.tile-warning{top:auto;bottom:9px;left:50%;font-size:.54rem;max-width:calc(100vw - 24px);padding:6px 8px;white-space:nowrap}
+ .torsboda-direction{font-size:.54rem;padding:5px 7px;gap:4px}.maplibregl-ctrl-bottom-left{left:6px;bottom:34px}.maplibregl-ctrl-bottom-left .maplibregl-ctrl{margin-right:5px}.maplibregl-ctrl-scale{font-size:.55rem}.energy-flow path{stroke-width:1.1}.datacenter-marker span{font-size:.55rem}
+}
+@media(prefers-reduced-motion:reduce){.energy-flow{display:none}}

@@ -1,0 +1,25 @@
+@font-face{font-family:Fraunces;src:url('fonts/Fraunces-variable.ttf') format('truetype');font-style:normal;font-weight:100 900;font-display:swap}
+@font-face{font-family:'Stockholm Figures';src:url('fonts/StockholmFigures.ttf') format('truetype');font-style:normal;font-weight:100 900;font-display:swap;unicode-range:U+0030-0039}
+:root{font-family:'Stockholm Figures',Fraunces,Georgia,serif;font-optical-sizing:auto;font-variation-settings:'SOFT' 55,'WONK' 1}
+button,input,select{font-family:inherit;font-variation-settings:inherit}
+.panel{width:380px;border-color:#575142;background:#0b1118f7}.panel .secondary,.panel details p{font-size:.86rem;line-height:1.6;color:#c1c9c9}.panel label,.panel summary{font-size:.94rem}.panel button,.panel input,.panel select{font-size:.9rem}
+.panel .tabs button{font-size:.85rem}.panel .assumption-badge{font-size:.7rem;color:#f4dba9}.panel .numbers strong{font-size:1.6rem}.panel .numbers span{font-size:.85rem}
+.right-rail{width:clamp(380px,29vw,480px);right:clamp(24px,2.4vw,48px);top:clamp(24px,2.4vw,48px)}
+.right-rail .simulation{padding:24px;border-radius:12px;border-color:#69604b;background:#0a1018f5;box-shadow:0 8px 36px #0005}
+.scenario-statistics{gap:26px 20px}.scenario-statistics>div{min-width:0}.scenario-statistics strong{font-family:'Stockholm Figures',Fraunces,Georgia,serif;font-size:clamp(26px,1.9vw,36px);font-weight:600;line-height:1.15;letter-spacing:0;font-variant-numeric:tabular-nums;color:#f3cf8e}
+.scenario-statistics span{font-size:clamp(14px,1vw,18px);font-weight:450;line-height:1.35;margin-top:8px;color:#e0e0d8;max-width:21ch}
+.scenario-statistics>div:nth-child(3) strong{color:#89e6d2}.scenario-statistics>div:nth-child(4) strong{color:#f0e2bd}
+#settings-reopen,#activate-presentation{font-size:1rem;min-height:46px;padding:10px 16px;background:#111923ee;color:#f3e6cc;border-color:#aa8b53;box-shadow:0 4px 16px #0003}
+#settings-reopen{left:clamp(24px,2.4vw,48px);top:clamp(24px,2.4vw,48px)}
+#activate-presentation{position:absolute;left:clamp(24px,2.4vw,48px);top:calc(clamp(24px,2.4vw,48px) + 60px);z-index:5;max-width:300px;font-size:.95rem;background:#292217ed}
+.torsboda-direction{font-size:.9rem;color:#f4d69e;border-color:#a98b50;background:#111923eb;padding:9px 14px}.datacenter-marker span{font-size:.9rem;color:#f3d99e}
+.maplibregl-popup-content{font-family:'Stockholm Figures',Fraunces,Georgia,serif;font-size:16px}.popup-number{font-size:25px}.popup-meta{font-size:13px}
+.animation-playing .maplibregl-ctrl-group{display:none}.maplibregl-ctrl-scale{font-family:inherit;font-size:.8rem;padding:2px 5px}
+button:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible{outline-color:#f0cc83}
+@media(max-width:760px){
+ .panel{width:calc(100vw - 24px);max-height:58dvh}.panel.panel-compact{width:calc(100vw - 24px)}
+ .right-rail{width:calc(100vw - 24px);max-width:360px;right:12px;top:80px}.right-rail .simulation{padding:14px 16px}.scenario-statistics{gap:14px 18px}.scenario-statistics strong{font-size:23px}.scenario-statistics span{font-size:12px;margin-top:4px;max-width:22ch}
+ #settings-reopen{left:12px;top:12px;max-width:calc(50vw - 18px);min-height:44px;padding:8px 11px;font-size:.82rem}
+ #activate-presentation{left:auto;right:12px;top:12px;max-width:calc(50vw - 18px);min-height:44px;padding:8px 11px;font-size:.8rem}
+ .torsboda-direction{font-size:.7rem;padding:6px 9px}.datacenter-marker span{font-size:.72rem}
+}

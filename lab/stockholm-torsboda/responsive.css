@@ -1,0 +1,10 @@
+#panel-toggle{display:none}
+.palace-marker,.farsta-marker{padding:0;min-height:0}
+.palace-marker:hover{background:#fff}
+.farsta-marker:hover{background:#ffc467}
+@media(max-width:760px){
+  #panel-toggle{display:block;margin-top:10px;width:100%;min-height:34px;font-size:.8125rem}
+  .panel-compact .numbers,.panel-compact .controls,.panel-compact .legend,.panel-compact details,.panel-compact header p{display:none}
+  .panel-compact{width:240px}
+  .panel-compact h1{margin-bottom:0}
+}
