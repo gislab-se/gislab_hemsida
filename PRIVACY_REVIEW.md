@@ -1,6 +1,6 @@
 # Integritetsgranskning av GISLab
 
-Datum: 2026-10-28. Avser den lokala publika webbplatsen i detta repo, inklusive kartverktygen på samma domän. Ändringarna är inte publicerade. Användaren har bekräftat Tåghusa 1:38 AB som ansvarigt bolag och one.com som e-postleverantör. Gallringsrutiner, närmare e-posthantering och leverantörsbedömningar återstår; integritetssidorna är därför tydligt märkta utkast med `noindex`.
+Datum: 2026-10-28. Avser den publika webbplatsen i detta repo, inklusive kartverktygen på samma domän. De tekniska ändringarna har publicerats och kontrollerats på gislab.se; se [kontrollen i skarp drift](PRIVACY_LIVE_REVIEW.md). Användaren har bekräftat Tåghusa 1:38 AB som ansvarigt bolag, one.com som e-postleverantör samt att förfrågningarna är få och gallringsrutin saknas. Gallringsrutiner, närmare e-posthantering och leverantörsbedömningar återstår; integritetssidorna är därför fortsatt tydligt märkta utkast med `noindex`.
 
 ## Bedömning och regler
 
@@ -35,11 +35,11 @@ Den enda egna beständiga webbläsarlagring som identifierats är `localStorage[
 
 GitHub Pages loggar IP-adresser för säkerhetsändamål, även för utloggade besökare, enligt [GitHubs Pages-dokumentation](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages#data-collection). Därför betyder frånvaro av egna cookies inte frånvaro av personuppgiftsbehandling. Läs även [GitHubs integritetspolicy](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement), [OpenStreetMap Foundations policy](https://osmfoundation.org/wiki/Privacy_Policy) och [Esris information](https://www.esri.com/en-us/privacy/privacy-statements/privacy-statement). Leverantörernas exakta roller, tillämpliga villkor, lagring och överföringsstöd är inte fastställda i denna kodgranskning.
 
-## Prioriterat före publicering
+## Kvarstående integritetsarbete
 
 1. **Färdigställ verksamhetsuppgifter:** Tåghusa 1:38 AB och one.com är bekräftade. Klargör nu behandlingsländer och verklig lagring/gallring av förfrågningar. Fastställ rättslig grund och dokumentera eventuell intresseavvägning. Färdigställ båda språkversionerna av integritetssidan, ta bort utkastmarkering och `noindex` och lägg då till sidorna i sidkartan.
 2. **Bedöm leverantörer:** verifiera faktisk GitHub Pages-konfiguration och tillämpliga villkor; kartlägg e-post och valda karttjänster. Dokumentera roller, PUB-avtal där det behövs och stöd för eventuella tredjelandsöverföringar. Juridisk hjälp är lämplig om rollerna eller överföringsstödet är oklara. Ett klick på ”Visa extern bakgrund” ska inte användas som allmänt undantag för internationella överföringar.
-3. **Verifiera skarp drift:** testa den publicerade domänen i ren webbläsarprofil, utan och med externa bakgrunder. Kontrollera faktiska svarshuvuden, HTTPS, cookies, lagring och återkallelse. Bekräfta att ingen CDN, proxy eller tillagd driftintegration inför ytterligare behandling. Sätt vid behov kompletterande samtyckeshantering utifrån vad verkliga leverantörssvar visar.
+3. **Upprepa driftkontrollen vid ändringar:** den publicerade domänen har nu testats med verkliga karttjänster i ren webbläsarprofil; se [resultatet](PRIVACY_LIVE_REVIEW.md). Upprepa kontrollen av svarshuvuden, HTTPS, cookies, lagring och återkallelse om en CDN, proxy, karttjänst eller annan driftintegration ändras. Sätt vid behov kompletterande samtyckeshantering utifrån vad verkliga leverantörssvar visar.
 4. **Inför verksamhetsrutiner:** bestäm vem som hanterar rättighetsbegäranden, hur uppgifter söks fram och gallras, hur konton skyddas och hur incidenter hanteras. Policyn behöver motsvara praktiken. Detta är organisatoriskt arbete som inte blir färdigt genom frontend-kod.
 
 För one.com anger [leverantörens GDPR-information](https://help.one.com/hc/sv/articles/360000253649-Hur-f%C3%B6ljer-one-com-GDPR) att tjänsten normalt agerar biträde för kunders e-post och att ett biträdesavtal ingår i abonnemangsavtalet. Att just bolagets abonnemang omfattas, vilka underleverantörer som används och vilka länder som berörs är ännu inte verifierat. Någon fast gallringstid har inte beslutats: enligt [IMY:s information om lagringstid](https://www.imy.se/vanliga-fragor-och-svar/hur-lange-far-vi-spara-uppgifter/) får personuppgifter inte behållas längre än ändamålet kräver. Vanliga avslutade förfrågningar måste därför skiljas från underlag som behövs för exempelvis avtal eller bokföring.
@@ -54,7 +54,7 @@ Att välja bort automatiska externa typsnitt och kartbakgrunder är en rekommend
 - I ren profil: inga automatiska externa anrop, cookies eller anrop till webbläsarens lagrings-API registrerades. Inga JavaScript-fel eller saknade lokala resurser registrerades.
 - Aktivt kartval kontrollerat i Klimatverkstad, Stockholm × Torsboda och Agroforestry. Kartbilder begärdes först efter val; nya kartanrop upphörde efter avstängning även vid zoomning. Valet återställdes vid omladdning.
 - Agroforestry: spara/läs/radera, redigering utan automatisk lagring, omladdning utan automatisk läsning och felaktigt sparad plan kontrollerade.
-- Externa kartbildssvar ersattes med testbilder i webbläsartesterna. Testerna verifierar anropens tidpunkt och avstängning, inte verkliga leverantörers cookies eller logghantering. Produktionsdomänen kunde inte hämtas med webbläsningsverktyget. Produktionsgranskningen återstår.
+- Vid den första lokala granskningen ersattes externa kartbildssvar med testbilder. Efter publicering genomfördes även en separat granskning av verkliga nätverksanrop och cookies på gislab.se, utan simulerade svar; se [produktionsgranskningen](PRIVACY_LIVE_REVIEW.md). Leverantörernas interna logghantering kan inte verifieras med ett webbläsartest.
 - Svenska startsidan och Stockholm-kartan kontrollerade visuellt; mobilvy användes för kartkontrollerna.
 
 ## Underhåll

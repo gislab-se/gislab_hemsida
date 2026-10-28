@@ -23,7 +23,7 @@ Källkod och publicerade resurser för [gislab.se](https://gislab.se/), GISLabs 
 
 ## Integritet och kakor
 
-Se [PRIVACY_REVIEW.md](PRIVACY_REVIEW.md) för inventering, lagkrav, genomförda ändringar och uppgifter som måste bekräftas före publicering. Integritetssidorna i `integritet/` och `en/privacy/` är utkast. Externa kartbakgrunder är av tills besökaren väljer dem; planteringsplaner sparas och läses endast med uttryckliga knapptryck. Kör `node --test tests/privacy.test.cjs` efter ändringar i externa resurser och bevara integritetsanpassningarna när färdigbyggda appar uppdateras.
+Se [PRIVACY_REVIEW.md](PRIVACY_REVIEW.md) för inventering, lagkrav och kvarstående integritetsarbete samt [PRIVACY_LIVE_REVIEW.md](PRIVACY_LIVE_REVIEW.md) för kontrollen av verkliga cookies och nätverksanrop efter publicering. Integritetssidorna i `integritet/` och `en/privacy/` är fortfarande utkast. Externa kartbakgrunder är av tills besökaren väljer dem; planteringsplaner sparas och läses endast med uttryckliga knapptryck. Kör `node --test tests/privacy.test.cjs` efter ändringar i externa resurser och bevara integritetsanpassningarna när färdigbyggda appar uppdateras.
 
 ## Lokal förhandsvisning
 
