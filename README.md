@@ -21,6 +21,10 @@ Källkod och publicerade resurser för [gislab.se](https://gislab.se/), GISLabs 
 - `assets/`, `scripts/` och `styles.css` innehåller gemensamma resurser.
 - `CNAME`, `robots.txt` och `sitemap.xml` styr den publika GitHub Pages-webbplatsen.
 
+## Integritet och kakor
+
+Se [PRIVACY_REVIEW.md](PRIVACY_REVIEW.md) för inventering, lagkrav, genomförda ändringar och uppgifter som måste bekräftas före publicering. Integritetssidorna i `integritet/` och `en/privacy/` är utkast. Externa kartbakgrunder är av tills besökaren väljer dem; planteringsplaner sparas och läses endast med uttryckliga knapptryck. Kör `node --test tests/privacy.test.cjs` efter ändringar i externa resurser och bevara integritetsanpassningarna när färdigbyggda appar uppdateras.
+
 ## Lokal förhandsvisning
 
 Webbplatsen är statisk. Starta en enkel lokal webbserver i repo-roten, exempelvis:

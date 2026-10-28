@@ -1,0 +1,54 @@
+.privacy-shortcut {
+  position: fixed;
+  top: 10px;
+  right: 12px;
+  z-index: 1200;
+  padding: 5px 9px;
+  border: 1px solid #b8c8bd;
+  border-radius: 5px;
+  background: #fffdf8;
+  color: #1f4938;
+  font: 12px/1.5 system-ui, sans-serif;
+  text-underline-offset: 3px;
+}
+.map-privacy {
+  position: fixed;
+  right: 12px;
+  bottom: 52px;
+  z-index: 1200;
+  width: min(340px, calc(100vw - 24px));
+  padding: 8px 12px;
+  border: 1px solid #b8c8bd;
+  border-radius: 7px;
+  background: #fffdf8;
+  color: #24342b;
+  box-shadow: 0 3px 14px #0002;
+  font: 13px/1.5 system-ui, sans-serif;
+}
+.map-privacy[hidden] { display: none; }
+.map-privacy[data-map-engine="leaflet"] { right: auto; left: 12px; }
+.map-privacy summary { cursor: pointer; font-weight: 600; color: #24342b; }
+.map-privacy summary span { color: #24342b; font: inherit; }
+.map-privacy p { margin: 8px 0; color: inherit; font: inherit; }
+.map-privacy-actions { display: flex; flex-wrap: wrap; gap: 6px; }
+.map-privacy button {
+  appearance: none;
+  width: auto;
+  margin: 0;
+  padding: 7px 10px;
+  border: 1px solid #2f6b4f;
+  border-radius: 4px;
+  background: #fffdf8;
+  color: #1f4938;
+  cursor: pointer;
+  font: 600 13px/1.4 system-ui, sans-serif;
+}
+.map-privacy button:disabled { opacity: .5; cursor: default; }
+.map-privacy button:focus-visible, .privacy-shortcut:focus-visible { outline: 3px solid #b45e3c; outline-offset: 3px; }
+.map-privacy a { color: #1f4938; text-decoration: underline; }
+@media (max-width: 600px) {
+  .map-privacy { bottom: 48px; max-width: min(290px, calc(100vw - 110px)); }
+  .map-privacy[data-map-engine="leaflet"] { max-width: min(290px, calc(100vw - 65px)); }
+  .privacy-shortcut { top: auto; bottom: 9px; right: 9px; }
+}
+@media print { .map-privacy, .privacy-shortcut { display: none; } }

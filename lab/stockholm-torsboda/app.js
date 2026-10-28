@@ -52,10 +52,11 @@ async function start() {
   el('data-counts').textContent = `${number(metadata.cells_populated)} befolkade rutor, ${number(metadata.cells_zero)} rutor med noll invånare och ${number(metadata.cells_nodata)} rutor utan data. Högsta värdet: ${number(metadata.population_max)} invånare i en ruta.`;
   map = new maplibregl.Map({
     container:'map',center:metadata.center,zoom:10.8,pitch:55,bearing:-18,minZoom:8,maxZoom:18,maxPitch:75,
-    style:{version:8,sources:{basemap:{type:'raster',tiles:['https://tile.openstreetmap.org/{z}/{x}/{y}.png'],tileSize:256,maxzoom:19,attribution:'© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'}},layers:[{id:'background',type:'background',paint:{'background-color':'#0a1522'}},{id:'basemap',type:'raster',source:'basemap',paint:{'raster-opacity':.85,'raster-saturation':-.8,'raster-brightness-max':.55}}]},
+    style:{version:8,sources:{},layers:[{id:'background',type:'background',paint:{'background-color':'#0a1522'}}]},
     attributionControl:true,canvasContextAttributes:{antialias:true}
   });
   window.stockholmMap = map;
+  window.GISLabPrivacy?.bindMapLibre(map,{'raster-opacity':.85,'raster-saturation':-.8,'raster-brightness-max':.55});
   map.addControl(new maplibregl.NavigationControl({visualizePitch:true}),'top-right');
   map.addControl(new maplibregl.ScaleControl({unit:'metric'}),'bottom-right');
   map.addControl(new maplibregl.FullscreenControl(),'top-right');

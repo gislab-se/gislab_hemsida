@@ -285,8 +285,10 @@ async function start(){
   worker=new Worker('population-worker.js');worker.onmessage=({data})=>{const p=pending.get(data.id);if(!p)return;pending.delete(data.id);data.type==='error'?p.reject(new Error(data.message)):p.resolve(data);};
   worker.onerror=()=>{for(const p of pending.values())p.reject(new Error('Befolkningsberäkningen kunde inte starta. Prova att ladda om sidan.'));pending.clear();};
   const initialized=rpc('init');
-  map=new maplibregl.Map({container:'map',center,zoom:11.15,pitch:57,bearing:-22.5,minZoom:5,maxZoom:18,maxPitch:75,attributionControl:true,canvasContextAttributes:{antialias:true},style:{version:8,sources:{basemap:{type:'raster',tiles:['https://tile.openstreetmap.org/{z}/{x}/{y}.png'],tileSize:256,maxzoom:19,attribution:'© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'}},layers:[{id:'background',type:'background',paint:{'background-color':'#0a1522'}},{id:'basemap',type:'raster',source:'basemap',paint:{'raster-opacity':.72,'raster-saturation':-.9,'raster-brightness-max':.42}}]}});
-  window.stockholmMap=map;map.addControl(new maplibregl.NavigationControl({visualizePitch:true}),'bottom-left');map.addControl(new maplibregl.ScaleControl({unit:'metric'}),'bottom-left');
+  map=new maplibregl.Map({container:'map',center,zoom:11.15,pitch:57,bearing:-22.5,minZoom:5,maxZoom:18,maxPitch:75,attributionControl:true,canvasContextAttributes:{antialias:true},style:{version:8,sources:{},layers:[{id:'background',type:'background',paint:{'background-color':'#0a1522'}}]}});
+  window.stockholmMap=map;
+  window.GISLabPrivacy?.bindMapLibre(map,{'raster-opacity':.72,'raster-saturation':-.9,'raster-brightness-max':.42});
+  map.addControl(new maplibregl.NavigationControl({visualizePitch:true}),'bottom-left');map.addControl(new maplibregl.ScaleControl({unit:'metric'}),'bottom-left');
   map.on('error',event=>{if(event.sourceId==='basemap'||event.error?.message?.includes('tile.openstreetmap.org'))el('tile-warning').hidden=false;else console.error(event.error);});
   const styled=new Promise(resolve=>map.once('style.load',resolve));
   const [init]=await Promise.all([initialized,styled]);meta=init.meta;

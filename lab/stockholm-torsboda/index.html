@@ -10,6 +10,9 @@
   <meta property="og:description" content="En interaktiv 3D-karta och symbolisk effektjämförelse mellan Stockholms befolkning och ett datacenter vid Torsboda. Antaganden och källor redovisas i kartan.">
   <meta property="og:url" content="https://gislab.se/lab/stockholm-torsboda/">
   <link rel="preload" href="fonts/Fraunces-variable.ttf" as="font" type="font/ttf" crossorigin><link rel="preload" href="fonts/StockholmFigures.ttf" as="font" type="font/ttf" crossorigin><link rel="stylesheet" href="vendor/maplibre-gl.css"><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="simulation.css"><link rel="stylesheet" href="torsboda.css"><link rel="stylesheet" href="presentation.css">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <link rel="stylesheet" href="/assets/privacy.css?v=20261028">
+  <script src="/scripts/privacy.js?v=20261028"></script>
 </head>
 <body class="settings-hidden presentation-mode">
 <main>
@@ -107,5 +110,12 @@
   <div id="tile-warning" class="tile-warning" role="status" hidden>Bakgrundskartan kunde inte läsas. Befolkningsdatan visas fortfarande.</div>
   <div class="help"><span><b>Dra</b> panorera</span><span><b>Scrolla</b> zooma</span><span><b>Högerdra / Ctrl + dra</b> rotera</span><span><b>Peka / tryck</b> läs värde</span></div>
 </main>
-<script src="vendor/maplibre-gl.js"></script><script src="geo.js"></script><script src="flow-route.js"></script><script src="model.js"></script><script src="comparison.js"></script><script src="datacenter-geometry.js"></script><script src="tone.js"></script><script src="explorer.js"></script>
+<script src="vendor/maplibre-gl.js"></script><script src="geo.js"></script><script src="flow-route.js"></script><script src="model.js"></script><script src="comparison.js"></script><script src="datacenter-geometry.js"></script><script src="tone.js"></script><script src="explorer.js?v=20261028-privacy"></script>
+  <a class="privacy-shortcut" href="/integritet/">Integritet och kakor</a>
+<details class="map-privacy" data-map-privacy hidden>
+  <summary><span data-map-status>Extern bakgrund av</span></summary>
+  <p>Kartan fungerar med lokala data. Om du väljer extern bakgrund skickas din IP-adress och det visade kartutsnittet till OpenStreetMap Foundation. Valet gäller bara denna sida och kan tas tillbaka här.</p>
+  <div class="map-privacy-actions"><button type="button" data-map-enable>Visa extern bakgrund</button><button type="button" data-map-disable disabled>Dölj extern bakgrund</button></div>
+  <p><a href="/integritet/#kartor">Om kartor och personuppgifter</a></p>
+</details>
 </body></html>

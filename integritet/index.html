@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Integritet och kakor | GISLab</title>
+  <meta name="description" content="Så fungerar personuppgifter, externa kartor och lokal lagring på GISLabs webbplats.">
+  <meta name="robots" content="noindex,follow">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <link rel="canonical" href="https://gislab.se/integritet/">
+  <link rel="alternate" hreflang="sv" href="https://gislab.se/integritet/">
+  <link rel="alternate" hreflang="en" href="https://gislab.se/en/privacy/">
+  <link rel="icon" href="/assets/favicon.svg?v=2" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css?v=20261028-privacy">
+</head>
+<body>
+  <main class="privacy-page">
+    <header><a href="/">← GISLab</a><a href="/en/privacy/" lang="en">English</a></header>
+    <h1>Integritet och kakor</h1>
+    <p class="updated">Utkast granskat den 28 oktober 2026.</p>
+    <aside class="privacy-draft" aria-label="Utkast">
+      <strong>Utkast – ska färdigställas före publicering.</strong>
+      <p>Personuppgiftsansvarig är Tåghusa 1:38 AB och e-postleverantör är one.com. Behandlingsländer, tillämpliga leverantörsvillkor och rutiner för gallring behöver fortfarande bekräftas. Informationen om överföringar och lagringstid är därför preliminär.</p>
+    </aside>
+    <p>Här beskriver vi den publika webbplatsen gislab.se och kartverktygen på samma domän. Kollegieportalen och externa appar som länkas härifrån behöver egen information om personuppgifter.</p>
+    <nav aria-label="På denna sida"><a href="#kakor">Kakor och lagring</a><a href="#kartor">Externa kartor</a><a href="#kontakt">Kontakt och personuppgifter</a><a href="#rattigheter">Dina rättigheter</a></nav>
+
+    <h2 id="kakor">Kakor och lokal lagring</h2>
+    <p>Webbplatsens egen kod sätter inga cookies och använder inga analys- eller annonsspårningsverktyg. Typsnitt laddas från din enhet eller från gislab.se. Det finns inget generellt kakval att spara.</p>
+    <p>I planteringsverktyget Agroforestry finns knapparna ”Spara plan på den här enheten”, ”Läs sparad plan” och ”Radera sparad plan”. Först när du använder någon av knapparna får verktyget tillgång till sin sparade plan i webbläsaren. Ändringar sparas inte automatiskt.</p>
+    <ul>
+      <li><strong>Lagring:</strong> localStorage, med nyckeln <code>sorby-planting-draft-v1</code>.</li>
+      <li><strong>Innehåll och syfte:</strong> den redigerade åkergränsen och planteringsavstånden, för att du ska kunna spara och läsa din plan.</li>
+      <li><strong>Plats och varaktighet:</strong> i den aktuella webbläsaren på din enhet, utan automatisk tidsgräns, tills du väljer ”Radera sparad plan” eller raderar webbplatsdata. Webbläsaren kan också radera uppgifterna.</li>
+      <li><strong>Mottagare:</strong> planen skickas inte till GISLab eller kartleverantörerna. En GeoJSON-fil som du hämtar sparas som en separat fil på din enhet.</li>
+    </ul>
+    <p>Lagringen används för den sparfunktion du uttryckligen begär. Du kan använda kartan utan att spara. Radering av sparad plan påverkar inte en GeoJSON-fil som du redan har hämtat. Kartbilder och andra resurser kan också finnas i webbläsarens vanliga cache.</p>
+
+    <h2 id="kartor">Externa kartbakgrunder är av från början</h2>
+    <p>Stockholm × Torsboda, Klimatverkstad och Agroforestry visar lokala data utan att automatiskt hämta en extern bakgrundskarta. I Stockholm × Torsboda och Klimatverkstad öppnar du ”Extern bakgrund av” och väljer ”Visa extern bakgrund” om du vill använda OpenStreetMap. Välj ”Dölj extern bakgrund” på samma ställe för att stoppa nya anrop.</p>
+    <p>I Agroforestry väljer du en bakgrund i listan ”Bakgrund”. Välj ”Utan bakgrund” för att stoppa nya anrop. Valen sparas inte mellan sidladdningar. Att stänga av bakgrunden kan inte återta uppgifter som leverantören redan har tagit emot.</p>
+    <p>När du aktiverar en extern bakgrund får leverantören din IP-adress, information om webbläsaren, webbplatsens ursprung och koordinaterna för de kartbilder som behövs. Kartutsnittet visar vilket område du tittar på, inte automatiskt din egen position.</p>
+    <ul>
+      <li><strong>OpenStreetMap Foundation:</strong> kartbilder från <code>tile.openstreetmap.org</code>. Läs <a href="https://osmfoundation.org/wiki/Privacy_Policy">OpenStreetMap Foundations integritetspolicy</a>.</li>
+      <li><strong>Esri:</strong> valbara kartbilder i Agroforestry från <code>server.arcgisonline.com</code> och <code>clarity.maptiles.arcgis.com</code>. Läs <a href="https://www.esri.com/en-us/privacy/privacy-statements/privacy-statement">Esris integritetsinformation</a> och <a href="https://www.esri.com/en-us/privacy/privacy-statements/privacy-supplement">tillägget för produkter och tjänster</a>.</li>
+    </ul>
+    <p>GISLab gör kartan tillgänglig utan dessa externa anrop. Ditt aktiva val styr om bakgrunden laddas. Leverantörernas egen behandling, lagringstider och eventuella internationella överföringar beskrivs i deras information. GISLab behöver före publicering färdigställa bedömningen av leverantörernas roller och stödet för eventuella överföringar utanför EU/EES.</p>
+
+    <h2 id="kontakt">När du kontaktar GISLab</h2>
+    <p>GISLab drivs av Tåghusa 1:38 AB, som är personuppgiftsansvarig för verksamhetens behandling av personuppgifter som beskrivs här. Kontaktperson är Henrik Aldén, <a href="mailto:henrik@gislab.se">henrik@gislab.se</a>, <a href="tel:+46733795320">073-379 53 20</a>.</p>
+    <p>E-postlänkarna öppnar ditt eget e-postprogram. Webbplatsen skickar inget meddelande åt dig. När du skickar ett meddelande kan GISLab ta emot namn, e-postadress, telefonnummer och det du väljer att skriva. Uppgifterna behövs för att hantera din fråga och eventuell fortsatt kontakt. Undvik att skicka känsliga personuppgifter eller uppgifter om andra personer som inte behövs för frågan.</p>
+    <p>Föreslagen rättslig grund för vanliga frågor och kontakt med företrädare för organisationer är intresseavvägning (artikel 6.1 f GDPR): intresset av att kunna besvara förfrågningar och bedriva verksamheten. När en privatperson själv efterfrågar ett avtal kan nödvändig behandling i stället ske inför ett avtal (artikel 6.1 b). Detta behöver stämmas av mot verksamhetens faktiska hantering.</p>
+    <p><strong>E-postleverantör:</strong> one.com hanterar e-posten till henrik@gislab.se. Meddelanden och kontaktuppgifter behandlas därför i deras e-posttjänst. one.com beskriver sin roll som personuppgiftsbiträde för kunders e-post i <a href="https://help.one.com/hc/sv/articles/360000253649-Hur-f%C3%B6ljer-one-com-GDPR">sin information om GDPR</a>.</p>
+    <p><strong>Lagringstid:</strong> ska kompletteras med verksamhetens bekräftade rutin för när avslutade förfrågningar raderas. Behandlingsländer, underleverantörer, tillämpligt biträdesavtal och eventuellt överföringsstöd behöver också verifieras för det aktuella one.com-abonnemanget.</p>
+
+    <h2>Drift och tekniska uppgifter</h2>
+    <p>Webbplatsen tillhandahålls med GitHub Pages. När du besöker webbplatsen tar driftleverantören emot tekniska uppgifter för att leverera innehållet. GitHub uppger att besökares IP-adresser loggas och sparas för säkerhetsändamål. Det gäller också om besökaren inte är inloggad på GitHub.</p>
+    <p>Läs <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages#data-collection">GitHubs information om insamling på Pages</a> och <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHubs integritetspolicy</a> för deras hantering, lagring och internationella överföringar. GISLab behöver bekräfta tillämpliga avtalsvillkor, roller och överföringsstöd för den faktiska driften.</p>
+    <p>Länkar till externa webbplatser och portalen laddar inte dessa tjänster som inbäddat innehåll. När du följer en länk gäller den tjänstens egen personuppgiftshantering.</p>
+
+    <h2 id="rattigheter">Dina rättigheter</h2>
+    <p>Du kan kontakta <a href="mailto:henrik@gislab.se">henrik@gislab.se</a> för att begära tillgång till dina personuppgifter, rättelse eller radering. Beroende på behandlingen har du också rätt till begränsning, att invända och till dataportabilitet. Rättigheterna har undantag och bedöms för den aktuella behandlingen. För behandling som grundas på samtycke kan du återkalla det utan att tidigare laglig behandling påverkas.</p>
+    <p>En begäran ska normalt besvaras inom en månad. Läs mer om rättigheterna och hur du lämnar klagomål hos <a href="https://www.imy.se/privatperson/dataskydd/dina-rattigheter/">Integritetsskyddsmyndigheten (IMY)</a>. Du kan även läsa <a href="https://www.pts.se/internet-och-telefoni/kakor-cookies/">PTS information om kakor</a>.</p>
+  </main>
+</body>
+</html>
