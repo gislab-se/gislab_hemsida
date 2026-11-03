@@ -58,3 +58,18 @@ Kartans ursprung är `C:/gislab/projekt/datacenter/stockholm-3d/dist`, källvers
 bevara GISLabs canonical/OG-adress och tillbaka-länk i appens index.html.
 Publicera inte `.openai/`, `.git`, arbetsfiler eller inloggningsuppgifter tillsammans med appen.
 Scenariot visar antaganden och är ingen prognos för strömavbrott. Befolkningsrutorna är originalets 100 × 100 meter.
+
+## Klimatverkstad
+
+`klimatverkstad/` byggs från `gislab-se/klimatverkstad` med
+`VITE_BASE_PATH=/klimatverkstad/`. Publiceringen 2026-11-03 använder källversion
+`421e2f98c4050d1ad202602c52f65d0c1b8f8aee` och lägger till kommunens 402
+fastigheter, markfördelning i Mat 04 och ett tänd/släckbart marklager i Vindkraft 01.
+Markfördelningen kombinerar NMD2023 v2.1 med jordbruksblock från 2025;
+metod och källmetadata finns i `klimatverkstad/data/food/landcover-summary.json`.
+
+Appbygget innehåller `privacy-controls.js` och `privacy-controls.css`, baserade
+på webbplatsens gemensamma kontroller. Extern bakgrund är av från början,
+och appen laddar inga externa typsnitt. Produktionsbygget och webbläsartester
+av markfördelning, lagerbyte, felåterhämtning, mobilvy och bakgrundsval har
+kontrollerats före publicering.
