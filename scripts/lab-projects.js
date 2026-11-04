@@ -25,7 +25,7 @@
       title: "Agroforestry",
       category: "Jordbruk och landskap",
       status: "Prototyp",
-      summary: "Planera valnötsträd längs höjdkurvor. Justera kopplade rad- och trädavstånd, granska planteringsytan och behåll 150 träd per hektar.",
+      summary: "Planera valnötsträd längs höjdkurvor från laserdata. Tänd och släck lager, jämna ut kurvor och trädrader och behåll 150 träd per hektar.",
       tags: ["Agroforestry", "Valnöt", "Höjdkurvor"],
       url: "/lab/agroforestry/"
     },

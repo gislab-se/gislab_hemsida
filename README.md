@@ -79,6 +79,22 @@ första besök, sparade val, återkallelse, utgångna och felaktiga val,
 blockerad lagring, tangentbordsåtkomst och mobilvy har kontrollerats.
 
 
+## Agroforestry: laserdata och utjämnade trädrader
+
+Versionen 2026-11-04 bygger på källversion `96b6fc7` i kartprojektet. Markmodellen
+har 1 m rutstorlek och bygger på Lantmäteriets laserdata från februari 2025.
+Lagerpanelen styr gräns, höjdkurvor, skuggning, trädrader och trädpunkter. Fyra
+utjämningsnivåer formar både kurvor och planteringsrader; kurvornas ekvidistans
+är separat från planteringsavståndet. Grundytan behåller 1 054 träd och 3 m fri kant.
+GeoJSON-export och sparade planer följer vald utjämning. Originalets höjduppslag
+och webbplatsens kartval bevaras. Fastighetsidentifierare är borttagna från den
+publika sidan och exporter, medan läge och geometri fortsatt är publika.
+
+Publiceringskontrollen omfattar alla fyra utjämningsnivåer, nedladdningar,
+sparade planer, mobilvy samt webbplatsens tester för kartval och externa resurser.
+Den färdiga kartan ligger i `lab/agroforestry/`, inklusive lokala kopior av
+`map-consent.js` och `map-consent.css`.
+
 ## Gemensamma kartval
 
 Stockholm × Torsboda och Agroforestry använder `scripts/map-consent.js` och `assets/map-consent.css`. Första besöket visar en dialog; ja och nej sparas i 180 dagar, avgränsat till verktyg, leverantör och informationsversion. Se [inventering och verifiering](MAP_CONSENT_REVIEW.md).
