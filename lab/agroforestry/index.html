@@ -674,14 +674,15 @@ svg.leaflet-image-layer.leaflet-interactive path {
     :root{font:14px system-ui,-apple-system,"Segoe UI",sans-serif;color:#21352a;background:#edf0e5}*{box-sizing:border-box}body{margin:0}header{height:82px;padding:16px 24px;background:#fcfcf6;border-bottom:1px solid #ccd4c2;display:flex;align-items:center;justify-content:space-between;gap:20px}h1{margin:0;font-size:23px;letter-spacing:-.4px}header p{margin:4px 0;color:#5f6a5d;font-size:13px}.badge{background:#e6eddf;color:#396344;padding:8px 13px;border-radius:20px;font-size:12px;white-space:nowrap}main{height:calc(100dvh - 82px);display:grid;grid-template-columns:340px 1fr}aside{overflow:auto;padding:22px;background:#fcfcf6;border-right:1px solid #ccd4c2}section{border-bottom:1px solid #dfe4d6;padding-bottom:20px;margin-bottom:20px}h2{font-size:15px;margin:0 0 12px}p{line-height:1.55}.muted{font-size:12px;color:#626e60}.metrics{display:flex;gap:28px;margin-bottom:20px}.metrics strong{display:block;font-size:25px}.metrics span{font-size:12px;color:#626e60}label{display:block;font-size:13px;margin:12px 0}input[type=checkbox]{accent-color:#386a42;margin-right:8px}select,button,input[type=range]{font:inherit}select{width:100%;background:white;border:1px solid #c1cdb9;border-radius:7px;padding:9px}button{background:white;border:1px solid #bccbb4;border-radius:7px;padding:9px 13px;color:#294a30;cursor:pointer}button:hover{background:#e7eedf}button:disabled{opacity:.5;cursor:default}button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid #aa713d;outline-offset:2px}.buttons{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.status{border:1px solid #dac69f;background:#f7efde;padding:13px;border-radius:8px;font-size:12px;line-height:1.5}.status.ready{border-color:#a9c9a3;background:#eaf1e4}dl{margin:0}dl>div{display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-bottom:1px solid #e9eddf;font-size:12px}dt{color:#626e60}dd{margin:0;text-align:right;overflow-wrap:anywhere;max-width:63%}.swatch{display:inline-block;width:16px;height:11px;border:2px solid #bb7431;background:#d8a04433;margin-right:7px;vertical-align:middle}.swatch.contour{height:0;border:1px solid #80542c}.swatch.shade{border:0;background:linear-gradient(90deg,#666,#ddd)}#map{width:100%;height:100%;background:#e6eddd}.map-wrap{position:relative;min-height:0}.hint{position:absolute;top:16px;left:58px;z-index:450;background:#fffff3ee;padding:9px 13px;border-radius:7px;border:1px solid #d0d7c6;font-size:12px;max-width:calc(100% - 150px);pointer-events:none}#point-info{min-height:30px}a{color:#356940}details{font-size:12px;line-height:1.5;margin-top:12px}summary{cursor:pointer}.leaflet-container{font:inherit}.leaflet-control-attribution{font-size:10px}.leaflet-tooltip{font-size:12px}.north{font-size:16px;background:#fffff3d9;padding:8px;border-radius:5px;text-align:center;line-height:1.2}#network-status{color:#875522}#loading{position:absolute;inset:0;display:grid;place-items:center;z-index:600;background:#edf0e5}#loading[hidden]{display:none}@media(max-width:760px){header{height:80px;padding:14px 16px}h1{font-size:20px}.badge{display:none}main{height:auto;display:flex;flex-direction:column}.map-wrap{order:-1;height:60dvh;min-height:340px}aside{overflow:visible;border:0;padding:20px}.hint{left:54px;font-size:11px}.metrics{margin-bottom:14px}}
   </style>
 <style>.planting-vertex{background:white;border:2px solid #245a31;border-radius:3px;box-shadow:0 1px 4px #0006;cursor:move}.planting-vertex:focus{outline:3px solid #edc044;outline-offset:3px}</style><style>.spacing-controls{background:#edf3e8;border:1px solid #bfcfba;border-radius:9px;padding:12px}.spacing-controls label{display:flex;justify-content:space-between;gap:8px;font-weight:600}.spacing-controls output{color:#315d3c;white-space:nowrap}.spacing-controls input[type=range]{display:block;width:100%;accent-color:#386a42;cursor:pointer}.density-lock{margin:0;font-weight:700;color:#315d3c;font-size:12px}</style>  <meta name="referrer" content="strict-origin-when-cross-origin">
-  <link rel="stylesheet" href="/assets/privacy.css?v=20261028">
+  <link rel="stylesheet" href="/assets/map-consent.css?v=20261104-maps">
+  <script src="/scripts/map-consent.js?v=20261104-maps"></script>
 </head>
-<body>
+<body data-map-tool="agroforestry" data-map-name="Agroforestry">
   <header><div><h1>Agroforestry</h1><p><a href="/lab/">GISLab / Labbet</a> · Plantering längs höjdkurvor</p></div><span class="badge">Endast denna fastighet · <span id="header-area"></span></span></header>
   <main>
     <aside aria-label="Fastighetsuppgifter och terränglager">
       <section id="property-summary"><div class="metrics"><div><strong id="area-ha">—</strong><span>hektar</span></div><div><strong id="area-count">—</strong><span>skifte</span></div></div><dl id="property-info"></dl><div class="buttons"><button id="home">Visa hela fastigheten</button><button id="export-boundary">Hämta gräns · GeoJSON</button></div></section>
-      <section><h2>Kartlager</h2><label><input type="checkbox" id="boundary-toggle" checked><span class="swatch"></span>Fastighetsgräns</label><label for="basemap">Bakgrund</label><select id="basemap"><option value="none">Utan bakgrund · fungerar offline</option><option value="imagery">Esri satellitbild · internet</option><option value="clarity">Esri Clarity · alternativ flygbild</option><option value="topo">Esri topografisk karta · internet</option><option value="streets">Esri gatukarta · internet</option><option value="gray">Esri ljusgrå karta · internet</option><option value="osm">OpenStreetMap · internet</option></select><p class="muted">Extern bakgrund är av från början. Väljer du Esri eller OpenStreetMap skickas din IP-adress och kartutsnittet till leverantören. Välj ”Utan bakgrund” för att stoppa nya anrop. <a href="/integritet/#kartor">Läs om karttjänsterna</a>.</p><p id="network-status" class="muted" role="status" hidden></p></section>
+      <section><h2>Kartlager</h2><label><input type="checkbox" id="boundary-toggle" checked><span class="swatch"></span>Fastighetsgräns</label><label for="basemap">Bakgrund</label><select id="basemap"><option value="none">Utan bakgrund · fungerar offline</option><option value="imagery">Esri satellitbild · internet</option><option value="clarity">Esri Clarity · alternativ flygbild</option><option value="topo">Esri topografisk karta · internet</option><option value="streets">Esri gatukarta · internet</option><option value="gray">Esri ljusgrå karta · internet</option><option value="osm">OpenStreetMap · internet</option></select><p class="muted">Kartinställningar visar information innan en extern bakgrund aktiveras. Ditt ja eller nej sparas i 180 dagar. Välj ”Utan bakgrund” eller ”Fortsätt utan” för att återkalla. <a href="/integritet/#kartor">Läs om karttjänsterna</a>.</p><p id="network-status" class="muted" role="status" hidden></p></section>
             <section id="planting-section" hidden>
 <h2>Valnötsplantering · utkast</h2>
 <div class="metrics"><div><strong id="planting-area-ha">—</strong><span>markerad åker</span></div><div><strong id="planting-count">—</strong><span>föreslagna träd</span></div></div>
@@ -1072,10 +1073,10 @@ window.createSorbyPlanner=options=>{
   $('boundary-toggle').onchange = () => $('boundary-toggle').checked ? boundary.addTo(map) : map.removeLayer(boundary);
   const north = L.control({position:'topright'}); north.onAdd = () => {const element=L.DomUtil.create('div','north');element.innerHTML='↑<br>N';element.setAttribute('aria-label','Norr uppåt');return element;};north.addTo(map);
   let base=null;
-  $('basemap').onchange = () => {
+  const setBackground = (background) => {
     if(base){map.removeLayer(base);base=null;}
     $('network-status').hidden=true;
-    if($('basemap').value==='none')return;
+    if(!background)return;
     const esriAttribution='Tiles © Esri — Sources: Esri, HERE, Garmin, USGS, NGA, NASA, METI, TomTom, FAO, NOAA, Maxar, Earthstar Geographics, GIS User Community';
     const backgrounds={
       imagery:{url:'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',maxNativeZoom:19,attribution:esriAttribution},
@@ -1085,13 +1086,14 @@ window.createSorbyPlanner=options=>{
       gray:{url:'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}',maxNativeZoom:16,attribution:'Tiles © Esri · Esri, HERE, Garmin, <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>, GIS User Community'},
       osm:{url:'https://tile.openstreetmap.org/{z}/{x}/{y}.png',maxNativeZoom:19,attribution:'© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}
     };
-    if($('basemap').value==='osm' && location.protocol==='file:'){
+    if(background==='osm' && location.protocol==='file:'){
       $('network-status').hidden=false;$('network-status').textContent='OpenStreetMap kan användas på webbversionen av kartan. Välj en Esri-bakgrund när HTML-filen öppnas direkt.';return;
     }
-    const choice=backgrounds[$('basemap').value];if(!choice)return;
+    const choice=backgrounds[background];if(!choice)return;
     base=L.tileLayer(choice.url,{maxZoom:21,maxNativeZoom:choice.maxNativeZoom,attribution:choice.attribution}).addTo(map);
     base.on('tileerror',()=>{$('network-status').hidden=false;$('network-status').textContent='Bakgrundskartan kunde inte laddas. Fastighetsgränsen och lokala data fungerar fortfarande.';});
   };
+  window.GISLabPrivacy?.bindLeafletChoices(map, $('basemap'), setBackground);
   const download = (object,filename) => {const url=URL.createObjectURL(new Blob([JSON.stringify(object,null,2)],{type:'application/geo+json;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download=filename;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);};
   $('export-boundary').onclick = () => download(data.property,'agroforestry.geojson');
   const planner=window.createSorbyPlanner({data,map,$,fmt,esc,download});
@@ -1204,6 +1206,5 @@ window.createSorbyPlanner=options=>{
   map.invalidateSize();if(data.planting)planner.fit();else fit();
 })();
 </script>
-  <a class="privacy-shortcut" href="/integritet/">Integritet och kakor</a>
 </body>
 </html>

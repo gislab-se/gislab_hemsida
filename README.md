@@ -77,3 +77,26 @@ De svenska och engelska integritetssidorna beskriver den lokala lagringen.
 Appen laddar inga externa typsnitt. Produktionsbygget och webbläsartester av
 första besök, sparade val, återkallelse, utgångna och felaktiga val,
 blockerad lagring, tangentbordsåtkomst och mobilvy har kontrollerats.
+
+
+## Gemensamma kartval
+
+Stockholm × Torsboda och Agroforestry använder `scripts/map-consent.js` och `assets/map-consent.css`. Första besöket visar en dialog; ja och nej sparas i 180 dagar, avgränsat till verktyg, leverantör och informationsversion. Se [inventering och verifiering](MAP_CONSENT_REVIEW.md).
+
+Källprojekten synkroniseras utan att publicera eller committa deras övriga ändringar:
+
+```powershell
+node scripts/sync-map-consent.cjs C:/gislab/projekt/datacenter/stockholm-3d C:/gislab/projekt/experimentella_geografier/Anderslov
+```
+
+Skriptet uppdaterar Stockholms `dist` samt Agroforestrys mall, kartkod och publiceringsskript. Båda får lokala kopior av gemensam JS/CSS. Agroforestrys publicering kopierar resurserna med HTML-filen och aktiverar aldrig satellitbild automatiskt. Lägg till nya leverantörer uttryckligen och höj informationsversionen när mottagare, syfte eller information ändras.
+
+Webbläsartester (installerad Playwright och Chrome):
+
+```powershell
+$env:PLAYWRIGHT_MODULE="C:/path/to/node_modules/playwright"
+$env:MAP_TEST_ORIGIN="http://127.0.0.1:8876"
+node tests/map-consent.browser.cjs
+```
+
+`MAP_TEST_OUTPUT` anger katalog för rapport och skärmbilder. `MAP_TEST_LIVE=1` använder verkliga kartbilder utan avlyssnade eller ersatta svar. Kör även `node --test tests/privacy.test.cjs`. Publicering sker som tidigare via main och GitHub Pages.

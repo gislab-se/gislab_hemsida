@@ -11,10 +11,10 @@
   <meta property="og:url" content="https://gislab.se/lab/stockholm-torsboda/">
   <link rel="preload" href="fonts/Fraunces-variable.ttf" as="font" type="font/ttf" crossorigin><link rel="preload" href="fonts/StockholmFigures.ttf" as="font" type="font/ttf" crossorigin><link rel="stylesheet" href="vendor/maplibre-gl.css"><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="simulation.css"><link rel="stylesheet" href="torsboda.css"><link rel="stylesheet" href="presentation.css">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <link rel="stylesheet" href="/assets/privacy.css?v=20261028">
-  <script src="/scripts/privacy.js?v=20261028"></script>
+  <link rel="stylesheet" href="/assets/map-consent.css?v=20261104-maps">
+  <script src="/scripts/map-consent.js?v=20261104-maps"></script>
 </head>
-<body class="settings-hidden presentation-mode">
+<body data-map-tool="stockholm-torsboda" data-map-name="Stockholm × Torsboda" class="settings-hidden presentation-mode">
 <main>
   <div id="map" role="region" aria-label="Interaktiv befolkningskarta över Stockholm. Dra för att panorera, scrolla för att zooma." tabindex="0"></div>
   <button id="settings-reopen" aria-controls="settings-panel">Visa inställningar</button>
@@ -111,11 +111,6 @@
   <div class="help"><span><b>Dra</b> panorera</span><span><b>Scrolla</b> zooma</span><span><b>Högerdra / Ctrl + dra</b> rotera</span><span><b>Peka / tryck</b> läs värde</span></div>
 </main>
 <script src="vendor/maplibre-gl.js"></script><script src="geo.js"></script><script src="flow-route.js"></script><script src="model.js"></script><script src="comparison.js"></script><script src="datacenter-geometry.js"></script><script src="tone.js"></script><script src="explorer.js?v=20261028-privacy"></script>
-  <a class="privacy-shortcut" href="/integritet/">Integritet och kakor</a>
-<details class="map-privacy" data-map-privacy hidden>
-  <summary><span data-map-status>Extern bakgrund av</span></summary>
-  <p>Kartan fungerar med lokala data. Om du väljer extern bakgrund skickas din IP-adress och det visade kartutsnittet till OpenStreetMap Foundation. Valet gäller bara denna sida och kan tas tillbaka här.</p>
-  <div class="map-privacy-actions"><button type="button" data-map-enable>Visa extern bakgrund</button><button type="button" data-map-disable disabled>Dölj extern bakgrund</button></div>
-  <p><a href="/integritet/#kartor">Om kartor och personuppgifter</a></p>
-</details>
+
+<a class="privacy-shortcut" href="/integritet/">Integritet och kakor</a>
 </body></html>
