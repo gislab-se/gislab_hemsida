@@ -27,6 +27,14 @@
 
     <h2 id="cookies">Cookies and local storage</h2>
     <p>The website's own code sets no cookies and uses no analytics or advertising trackers. Fonts come from your device or gislab.se. No general cookie preference is stored.</p>
+    <p>Klimatverkstad stores your yes or no to the map background in this browser on your device. The choice is valid for 180 days and is read when you return, so you do not have to answer every time. It applies only to Klimatverkstad.</p>
+    <ul>
+      <li><strong>Storage:</strong> localStorage, key <code>gislab:klimatverkstad:map-background</code>.</li>
+      <li><strong>Content and purpose:</strong> yes or no, information version, choice time and expiry time, to remember and respect your choice. No visitor identifier is stored.</li>
+      <li><strong>Duration:</strong> the choice expires after 180 days and is removed or replaced when you open the map again. You can also clear site data in your browser.</li>
+      <li><strong>Change your choice:</strong> open “Kartinställningar” (map settings) in Klimatverkstad and choose “Visa kartbakgrund” (show background) or “Dölj kartbakgrund”/“Fortsätt utan” (hide background/continue without). The new choice replaces the old one.</li>
+      <li><strong>Recipients:</strong> the setting itself is not sent to GISLab or the map provider. Enabling the background causes the requests described below.</li>
+    </ul>
     <p>The Agroforestry planning tool accesses its saved plan only when you use “Spara plan på den här enheten” (save on this device), “Läs sparad plan” (load saved plan) or “Radera sparad plan” (delete saved plan). Changes are not saved automatically.</p>
     <ul>
       <li><strong>Storage:</strong> localStorage, key <code>sorby-planting-draft-v1</code>.</li>
@@ -36,9 +44,10 @@
     </ul>
     <p>Storage serves the save feature you explicitly request. You can use the map without saving. Deleting the saved plan does not delete downloaded files. Map images and other resources may also be held in the browser's ordinary cache.</p>
 
-    <h2 id="maps">External map backgrounds start disabled</h2>
-    <p>Stockholm × Torsboda, Klimatverkstad and Agroforestry display local data without automatically fetching an external background. In the first two tools, open “Extern bakgrund av” (external background off) and choose “Visa extern bakgrund” (show external background) to load OpenStreetMap. Choose “Dölj extern bakgrund” (hide external background) in the same panel to stop new requests.</p>
-    <p>In Agroforestry, choose a background in the “Bakgrund” list. Choose “Utan bakgrund” (no background) to stop new requests. Choices are not retained across page loads. Turning a background off cannot retrieve data the provider has already received.</p>
+    <h2 id="maps">You choose whether to show an external map background</h2>
+    <p>Klimatverkstad shows a dialog on your first visit. “Visa kartbakgrund” (show background) enables OpenStreetMap; “Fortsätt utan” (continue without) leaves it off. A valid saved choice is restored on return visits. No OpenStreetMap images are fetched until you have chosen yes, now or during an earlier visit. Open “Kartinställningar” (map settings) and choose “Dölj kartbakgrund” (hide background) to withdraw your choice and stop new requests. The close button and Escape dismiss the dialog without changing your choice. The rest of the map remains usable without a background.</p>
+    <p>In Stockholm × Torsboda, open “Extern bakgrund av” (external background off) and choose “Visa extern bakgrund” (show external background) to load OpenStreetMap. Choose “Dölj extern bakgrund” (hide external background) in the same panel to stop new requests. In Agroforestry, choose a background in the “Bakgrund” list, or “Utan bakgrund” (no background) to stop new requests. These two tools do not retain choices across page loads.</p>
+    <p>Turning a background off cannot retrieve data the provider has already received.</p>
     <p>When enabled, the provider receives your IP address, browser information, website origin and coordinates of requested map images. The map area indicates what you are viewing, rather than automatically revealing your own location.</p>
     <ul>
       <li><strong>OpenStreetMap Foundation:</strong> images from <code>tile.openstreetmap.org</code>. Read the <a href="https://osmfoundation.org/wiki/Privacy_Policy">OpenStreetMap Foundation privacy policy</a>.</li>

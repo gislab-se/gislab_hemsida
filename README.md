@@ -69,7 +69,11 @@ Markfördelningen kombinerar NMD2023 v2.1 med jordbruksblock från 2025;
 metod och källmetadata finns i `klimatverkstad/data/food/landcover-summary.json`.
 
 Appbygget innehåller `privacy-controls.js` och `privacy-controls.css`, baserade
-på webbplatsens gemensamma kontroller. Extern bakgrund är av från början,
-och appen laddar inga externa typsnitt. Produktionsbygget och webbläsartester
-av markfördelning, lagerbyte, felåterhämtning, mobilvy och bakgrundsval har
-kontrollerats före publicering.
+på webbplatsens gemensamma kontroller. Uppdateringen 2026-11-04 från källversion
+`835a910` visar en stor dialog vid första besöket och sparar ja eller nej i
+180 dagar. Externa kartbilder hämtas först efter ett aktivt ja eller ett
+giltigt tidigare ja. Kartinställningar öppnar samma dialog för att ändra valet.
+De svenska och engelska integritetssidorna beskriver den lokala lagringen.
+Appen laddar inga externa typsnitt. Produktionsbygget och webbläsartester av
+första besök, sparade val, återkallelse, utgångna och felaktiga val,
+blockerad lagring, tangentbordsåtkomst och mobilvy har kontrollerats.

@@ -1,7 +1,7 @@
 .privacy-shortcut {
   position: fixed;
-  top: 10px;
-  right: 12px;
+  top: 22px;
+  right: 132px;
   z-index: 1200;
   padding: 5px 9px;
   border: 1px solid #b8c8bd;
@@ -11,74 +11,124 @@
   font: 12px/1.5 system-ui, sans-serif;
   text-underline-offset: 3px;
 }
-.map-privacy {
+
+.map-settings {
   position: fixed;
-  right: 12px;
-  bottom: 52px;
-  z-index: 1200;
-  width: min(340px, calc(100vw - 24px));
-  padding: 8px 12px;
+  top: 156px;
+  right: 18px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+  padding: 10px 14px;
   border: 1px solid #b8c8bd;
-  border-radius: 7px;
+  border-radius: 9px;
   background: #fffdf8;
-  color: #24342b;
+  color: #244a4d;
   box-shadow: 0 3px 14px #0002;
-  font: 13px/1.5 system-ui, sans-serif;
-}
-.map-privacy[hidden] { display: none; }
-.map-privacy[data-map-engine="leaflet"] { right: auto; left: 12px; }
-.map-privacy summary { cursor: pointer; font-weight: 600; color: #24342b; }
-.map-privacy summary span { color: #24342b; font: inherit; }
-.map-privacy p { margin: 8px 0; color: inherit; font: inherit; }
-.map-privacy-actions { display: flex; flex-wrap: wrap; gap: 6px; }
-.map-privacy button {
-  appearance: none;
-  width: auto;
-  margin: 0;
-  padding: 7px 10px;
-  border: 1px solid #2f6b4f;
-  border-radius: 4px;
-  background: #fffdf8;
-  color: #1f4938;
   cursor: pointer;
   font: 600 13px/1.4 system-ui, sans-serif;
 }
-.map-privacy button:disabled { opacity: .5; cursor: default; }
-.map-privacy button:focus-visible, .privacy-shortcut:focus-visible { outline: 3px solid #b45e3c; outline-offset: 3px; }
-.map-privacy a { color: #1f4938; text-decoration: underline; }
-@media (max-width: 600px) {
-  .map-privacy { bottom: 48px; max-width: min(290px, calc(100vw - 110px)); }
-  .map-privacy[data-map-engine="leaflet"] { max-width: min(290px, calc(100vw - 65px)); }
-  .privacy-shortcut { top: auto; bottom: 9px; right: 9px; }
-}
-@media print { .map-privacy, .privacy-shortcut { display: none; } }
+.map-settings[hidden] { display: none; }
+.map-settings span { color: #546c68; font-size: 11px; font-weight: 400; }
+body:has(.measure-tool.active) .map-settings { margin-top: 48px; }
 
-/* Keep the existing choice controls clear of Klimatverkstad's panels. */
-.privacy-shortcut { top: 22px; right: 132px; }
-.map-privacy[data-map-engine="leaflet"] {
-  top: 156px;
-  right: 18px;
-  bottom: auto;
-  left: auto;
-  z-index: 1000;
-  width: min(330px, calc(100vw - 36px));
+.map-privacy {
+  box-sizing: border-box;
+  width: min(680px, calc(100vw - 32px));
+  max-height: calc(100vh - 32px);
+  max-height: calc(100dvh - 32px);
+  margin: auto;
+  padding: 36px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  border: 1px solid #bccdc4;
+  border-radius: 20px;
+  background: #fffdf8;
+  color: #243e40;
+  box-shadow: 0 24px 90px #12343c40;
+  font: 16px/1.55 system-ui, sans-serif;
 }
-.map-privacy:not([open]) { width: auto; }
+.map-privacy::backdrop { background: #15394199; }
+.map-privacy .map-privacy-eyebrow {
+  margin: 0 36px 12px 0;
+  color: #80551b;
+  font-size: 12px;
+  font-weight: 650;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.map-privacy h2 {
+  margin: 0 24px 14px 0;
+  color: #173b43;
+  font-size: 32px;
+  line-height: 1.15;
+  letter-spacing: -.025em;
+}
+.map-privacy p { margin: 16px 0; }
+.map-privacy .map-privacy-intro { font-size: 19px; line-height: 1.5; }
+.map-privacy-info {
+  margin: 24px 0 18px;
+  padding: 18px 20px;
+  border: 1px solid #d8e2db;
+  border-radius: 12px;
+  background: #eef3ed;
+}
+.map-privacy-info h3 { margin: 0 0 6px; font-size: 16px; }
+.map-privacy-info p { margin: 0; }
+.map-privacy-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 24px 0 18px; }
+.map-privacy-actions button {
+  min-height: 54px;
+  padding: 12px 16px;
+  border: 1px solid #37645e;
+  border-radius: 10px;
+  background: #fffdf8;
+  color: #214e49;
+  cursor: pointer;
+  font: 650 16px/1.4 system-ui, sans-serif;
+}
+.map-privacy-actions button:hover, .map-settings:hover { background: #edf3ed; border-color: #214e49; }
+.map-privacy .map-privacy-note { margin: 16px 0 10px; color: #546965; font-size: 14px; }
+.map-privacy .map-privacy-link { margin: 10px 0 0; font-size: 14px; }
+.map-privacy a { color: #285e57; text-underline-offset: 3px; }
+.map-privacy-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: #42605c;
+  cursor: pointer;
+  font: 28px/1 system-ui, sans-serif;
+}
+.map-privacy-close:hover { background: #e8efe9; }
+.map-privacy button:focus-visible, .map-privacy a:focus-visible,
+.map-settings:focus-visible, .privacy-shortcut:focus-visible { outline: 3px solid #a56716; outline-offset: 3px; }
+.map-privacy h2:focus { outline: none; }
+
 @media (max-width: 850px) {
   .privacy-shortcut {
     top: 44px;
     right: auto;
-    bottom: auto;
     left: 16px;
     padding: 0;
     border: 0;
     background: transparent;
     font-size: 10px;
   }
-  .map-privacy[data-map-engine="leaflet"] {
-    top: 178px;
-    right: 10px;
-    left: auto;
-    max-width: min(300px, calc(100vw - 20px));
-  }
+  .map-settings { top: 178px; right: 10px; padding: 10px 12px; }
 }
+@media (max-width: 540px) {
+  .map-privacy { width: calc(100vw - 24px); padding: 26px 22px 22px; border-radius: 16px; }
+  .map-privacy h2 { font-size: 27px; }
+  .map-privacy .map-privacy-intro { font-size: 17px; }
+  .map-privacy-info { margin: 18px 0; padding: 14px; }
+  .map-privacy-actions { grid-template-columns: 1fr; gap: 10px; margin: 20px 0 16px; }
+  .map-privacy .map-privacy-eyebrow { font-size: 10px; }
+}
+@media print { .map-privacy, .map-settings, .privacy-shortcut { display: none; } }

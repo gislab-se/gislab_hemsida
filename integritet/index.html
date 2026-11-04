@@ -27,6 +27,14 @@
 
     <h2 id="kakor">Kakor och lokal lagring</h2>
     <p>Webbplatsens egen kod sätter inga cookies och använder inga analys- eller annonsspårningsverktyg. Typsnitt laddas från din enhet eller från gislab.se. Det finns inget generellt kakval att spara.</p>
+    <p>I Klimatverkstad sparas ditt ja eller nej till kartbakgrunden i webbläsaren på den här enheten. Valet gäller i 180 dagar och läses när du återkommer, så att du slipper svara på samma fråga varje gång. Det används bara för Klimatverkstad.</p>
+    <ul>
+      <li><strong>Lagring:</strong> localStorage, med nyckeln <code>gislab:klimatverkstad:map-background</code>.</li>
+      <li><strong>Innehåll och syfte:</strong> ja eller nej, informationsversion, valtid och utgångstid, för att komma ihåg och respektera ditt val. Inget besökar-id sparas.</li>
+      <li><strong>Varaktighet:</strong> valet slutar gälla efter 180 dagar och tas bort eller ersätts när du öppnar kartan igen. Du kan också radera webbplatsdata i webbläsaren.</li>
+      <li><strong>Ändra valet:</strong> öppna ”Kartinställningar” i Klimatverkstad och välj ”Visa kartbakgrund” eller ”Dölj kartbakgrund”/”Fortsätt utan”. Det nya valet ersätter det gamla.</li>
+      <li><strong>Mottagare:</strong> själva inställningen skickas inte till GISLab eller kartleverantören. Om du väljer att visa bakgrunden sker de anrop som beskrivs nedan.</li>
+    </ul>
     <p>I planteringsverktyget Agroforestry finns knapparna ”Spara plan på den här enheten”, ”Läs sparad plan” och ”Radera sparad plan”. Först när du använder någon av knapparna får verktyget tillgång till sin sparade plan i webbläsaren. Ändringar sparas inte automatiskt.</p>
     <ul>
       <li><strong>Lagring:</strong> localStorage, med nyckeln <code>sorby-planting-draft-v1</code>.</li>
@@ -36,9 +44,10 @@
     </ul>
     <p>Lagringen används för den sparfunktion du uttryckligen begär. Du kan använda kartan utan att spara. Radering av sparad plan påverkar inte en GeoJSON-fil som du redan har hämtat. Kartbilder och andra resurser kan också finnas i webbläsarens vanliga cache.</p>
 
-    <h2 id="kartor">Externa kartbakgrunder är av från början</h2>
-    <p>Stockholm × Torsboda, Klimatverkstad och Agroforestry visar lokala data utan att automatiskt hämta en extern bakgrundskarta. I Stockholm × Torsboda och Klimatverkstad öppnar du ”Extern bakgrund av” och väljer ”Visa extern bakgrund” om du vill använda OpenStreetMap. Välj ”Dölj extern bakgrund” på samma ställe för att stoppa nya anrop.</p>
-    <p>I Agroforestry väljer du en bakgrund i listan ”Bakgrund”. Välj ”Utan bakgrund” för att stoppa nya anrop. Valen sparas inte mellan sidladdningar. Att stänga av bakgrunden kan inte återta uppgifter som leverantören redan har tagit emot.</p>
+    <h2 id="kartor">Du väljer om en extern kartbakgrund ska visas</h2>
+    <p>I Klimatverkstad visas en dialog vid första besöket. ”Visa kartbakgrund” aktiverar OpenStreetMap och ”Fortsätt utan” behåller bakgrunden avstängd. Vid återbesök återställs ett giltigt sparat val. Inga kartbilder hämtas från OpenStreetMap innan du har valt ja, nu eller vid ett tidigare besök. Öppna ”Kartinställningar” och välj ”Dölj kartbakgrund” för att återkalla valet och stoppa nya anrop. Krysset och Escape stänger dialogen utan att ändra valet. Kartans övriga innehåll fungerar även utan bakgrund.</p>
+    <p>I Stockholm × Torsboda öppnar du ”Extern bakgrund av” och väljer ”Visa extern bakgrund” om du vill använda OpenStreetMap. Välj ”Dölj extern bakgrund” på samma ställe för att stoppa nya anrop. I Agroforestry väljer du en bakgrund i listan ”Bakgrund” och ”Utan bakgrund” för att stoppa nya anrop. I dessa två verktyg sparas valen inte mellan sidladdningar.</p>
+    <p>Att stänga av bakgrunden kan inte återta uppgifter som leverantören redan har tagit emot.</p>
     <p>När du aktiverar en extern bakgrund får leverantören din IP-adress, information om webbläsaren, webbplatsens ursprung och koordinaterna för de kartbilder som behövs. Kartutsnittet visar vilket område du tittar på, inte automatiskt din egen position.</p>
     <ul>
       <li><strong>OpenStreetMap Foundation:</strong> kartbilder från <code>tile.openstreetmap.org</code>. Läs <a href="https://osmfoundation.org/wiki/Privacy_Policy">OpenStreetMap Foundations integritetspolicy</a>.</li>

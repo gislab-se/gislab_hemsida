@@ -7,19 +7,33 @@
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     <title>Vindkraft och kommunens mark – Klimatverkstad | GISLab</title>
     <link rel="canonical" href="https://gislab.se/klimatverkstad/" />
-    <link rel="stylesheet" href="/klimatverkstad/privacy-controls.css" />
-    <script src="/klimatverkstad/privacy-controls.js"></script>
+    <link rel="stylesheet" href="/klimatverkstad/privacy-controls.css?v=20261104" />
+    <script src="/klimatverkstad/privacy-controls.js?v=20261104"></script>
     <script type="module" crossorigin src="/klimatverkstad/assets/index-CJOaS_cH.js"></script>
     <link rel="stylesheet" crossorigin href="/klimatverkstad/assets/index-C2Gg1us_.css">
   </head>
   <body>
     <main id="app"></main>
     <a class="privacy-shortcut" href="/integritet/">Integritet och kakor</a>
-    <details class="map-privacy" data-map-privacy data-map-engine="leaflet" hidden>
-      <summary><span data-map-status>Extern bakgrund av</span></summary>
-      <p>Kartan fungerar med lokala data. Om du väljer extern bakgrund skickas din IP-adress och det visade kartutsnittet till OpenStreetMap Foundation. Valet gäller bara denna sida och kan tas tillbaka här.</p>
-      <div class="map-privacy-actions"><button type="button" data-map-enable>Visa extern bakgrund</button><button type="button" data-map-disable disabled>Dölj extern bakgrund</button></div>
-      <p><a href="/integritet/#kartor">Om kartor och personuppgifter</a></p>
-    </details>
+    <button class="map-settings" type="button" data-map-settings aria-haspopup="dialog" aria-controls="map-privacy-dialog" hidden>
+      Kartinställningar <span data-map-status>Bakgrund av</span>
+    </button>
+    <dialog id="map-privacy-dialog" class="map-privacy" data-map-privacy aria-labelledby="map-privacy-title" aria-describedby="map-privacy-intro">
+      <button class="map-privacy-close" type="button" data-map-close aria-label="Stäng utan att ändra kartbakgrunden">×</button>
+      <p class="map-privacy-eyebrow">Välkommen till Klimatverkstad</p>
+      <h2 id="map-privacy-title" tabindex="-1" autofocus>Vill du visa kartbakgrunden?</h2>
+      <p id="map-privacy-intro" class="map-privacy-intro">Med ortnamn, vägar och landskap blir det lättare att hitta i kartan.</p>
+      <div class="map-privacy-info">
+        <h3>Det här delas när bakgrunden visas</h3>
+        <p>Kartbilderna hämtas från OpenStreetMap Foundation. Då skickas din IP-adress och uppgifter om kartområdet du tittar på till deras karttjänst.</p>
+      </div>
+      <p>Du kan använda kartans övriga innehåll även utan bakgrund.</p>
+      <div class="map-privacy-actions">
+        <button type="button" data-map-enable>Visa kartbakgrund</button>
+        <button type="button" data-map-disable>Fortsätt utan</button>
+      </div>
+      <p class="map-privacy-note" data-map-storage-note>Vi kommer ihåg ditt val för Klimatverkstad på den här enheten i 180 dagar. Du kan när som helst ändra det via Kartinställningar.</p>
+      <p class="map-privacy-link"><a href="/integritet/#kartor">Om kartor och personuppgifter</a></p>
+    </dialog>
   </body>
 </html>
