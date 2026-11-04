@@ -52,6 +52,15 @@ Bakgrundsleverantörer har en explicit tillåtelselista. Lägg till en ny levera
 
 ## Produktionskontroll
 
-Publicering sker via webbplatsens befintliga `main` och GitHub Pages. Resultatet av kontrollen på de riktiga adresserna redovisas efter genomförd publicering.
+Implementationen publicerades via befintliga `main` i commit [`592fe34`](https://github.com/gislab-se/gislab_hemsida/commit/592fe34d79a9a921fb9c424ae94894558f3a2764). [GitHub Pages-körningen](https://github.com/gislab-se/gislab_hemsida/actions/runs/41824023321) slutfördes med `success`.
+
+Samtliga 38 webbläsarkontroller kördes sedan igen mot de riktiga HTTPS-adresserna med `MAP_TEST_LIVE=1`, utan avlyssnade eller ersatta nätverkssvar. Alla passerade. Se [maskinläsbar rapport](tests/results/map-consent-live-20261104.json).
+
+- Noll externa anrop före aktivt val, vid sparat nej eller vid ogiltigt/utgånget val. Efter återkallelse registrerades inga nya kartanrop vid fortsatt zoomning eller omladdning.
+- Riktiga HTTP 200-svar från `tile.openstreetmap.org`, `server.arcgisonline.com` och `clarity.maptiles.arcgis.com` efter godkännande. Samtliga sex Agroforestry-bakgrunder provades. Ett sparat OSM-ja aktiverade inte Esri före en ny bekräftelse.
+- Inga JavaScript-fel, HTTP-fel eller oavsiktligt misslyckade nätverksanrop registrerades i körningen. Avbrutna tile-anrop vid lagerbyte/återkallelse är förväntade.
+- Mobil- och skrivbordskontrollerna upprepades på de publicerade sidorna. Dialog och knappplacering granskades även i skärmbilder.
+- Nio filer gav HTTP 200 och matchade commitens bytes genom SHA-256: gemensam JS/CSS, båda uppdaterade kartornas HTML, båda integritetssidorna samt Klimatverkstads HTML och två referensfiler.
+- Klimatverkstad på `#mat` kontrollerades dessutom separat: förstagångsdialogen och sparat nej fungerade utan externa anrop eller skriptfel. Valet påverkade inte Stockholm × Torsboda.
 
 De svenska och engelska integritetssidorna beskriver nu alla tre verktygens sparade kartval. Deras befintliga utkastmarkering för kvarstående verksamhets- och leverantörsfrågor bevaras. Nätverkstester verifierar klientens beteende, inte leverantörernas interna loggning eller avtal.

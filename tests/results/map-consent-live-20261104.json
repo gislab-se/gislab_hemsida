@@ -1,0 +1,136 @@
+{
+  "origin": "https://gislab.se",
+  "live": true,
+  "results": [
+    {
+      "name": "stockholm-torsboda: first visit, Escape, close, focus trap, saved no, map without background"
+    },
+    {
+      "name": "stockholm-torsboda: consent, saved yes, unchanged choice on close/Escape, withdrawal stops tile requests",
+      "hosts": [
+        "tile.openstreetmap.org"
+      ],
+      "requests": 210,
+      "successfulResponses": 210
+    },
+    {
+      "name": "stockholm-torsboda: rejects expired"
+    },
+    {
+      "name": "stockholm-torsboda: rejects oldVersion"
+    },
+    {
+      "name": "stockholm-torsboda: rejects wrongTool"
+    },
+    {
+      "name": "stockholm-torsboda: rejects wrongProvider"
+    },
+    {
+      "name": "stockholm-torsboda: rejects extraProvider"
+    },
+    {
+      "name": "stockholm-torsboda: rejects wrongType"
+    },
+    {
+      "name": "stockholm-torsboda: rejects future"
+    },
+    {
+      "name": "stockholm-torsboda: rejects invalidDuration"
+    },
+    {
+      "name": "stockholm-torsboda: rejects unknownBackground"
+    },
+    {
+      "name": "stockholm-torsboda: malformed JSON"
+    },
+    {
+      "name": "stockholm-torsboda: blocked storage still allows yes and withdrawal for this visit"
+    },
+    {
+      "name": "stockholm-torsboda: failed withdrawal write removes old yes"
+    },
+    {
+      "name": "stockholm-torsboda: keyboard and unobstructed controls 320px"
+    },
+    {
+      "name": "stockholm-torsboda: keyboard and unobstructed controls 390px"
+    },
+    {
+      "name": "stockholm-torsboda: keyboard and unobstructed controls 1440px"
+    },
+    {
+      "name": "agroforestry: first visit, Escape, close, focus trap, saved no, map without background"
+    },
+    {
+      "name": "agroforestry: consent, saved yes, unchanged choice on close/Escape, withdrawal stops tile requests",
+      "hosts": [
+        "server.arcgisonline.com"
+      ],
+      "requests": 49,
+      "successfulResponses": 49
+    },
+    {
+      "name": "agroforestry: rejects expired"
+    },
+    {
+      "name": "agroforestry: rejects oldVersion"
+    },
+    {
+      "name": "agroforestry: rejects wrongTool"
+    },
+    {
+      "name": "agroforestry: rejects wrongProvider"
+    },
+    {
+      "name": "agroforestry: rejects extraProvider"
+    },
+    {
+      "name": "agroforestry: rejects wrongType"
+    },
+    {
+      "name": "agroforestry: rejects future"
+    },
+    {
+      "name": "agroforestry: rejects invalidDuration"
+    },
+    {
+      "name": "agroforestry: rejects unknownBackground"
+    },
+    {
+      "name": "agroforestry: malformed JSON"
+    },
+    {
+      "name": "agroforestry: blocked storage still allows yes and withdrawal for this visit"
+    },
+    {
+      "name": "agroforestry: failed withdrawal write removes old yes"
+    },
+    {
+      "name": "agroforestry: keyboard and unobstructed controls 320px"
+    },
+    {
+      "name": "agroforestry: keyboard and unobstructed controls 390px"
+    },
+    {
+      "name": "agroforestry: keyboard and unobstructed controls 1440px"
+    },
+    {
+      "name": "Agroforestry: all six backgrounds, provider change requires confirmation, cancel preserves OSM, direct none withdraws",
+      "hosts": [
+        "tile.openstreetmap.org",
+        "server.arcgisonline.com",
+        "clarity.maptiles.arcgis.com"
+      ]
+    },
+    {
+      "name": "havsniva-klimatanpassning: own resources only, no consent dialog"
+    },
+    {
+      "name": "salenfjallen-3d: own resources only, no consent dialog"
+    },
+    {
+      "name": "vattenforbrukning: own resources only, no consent dialog"
+    }
+  ],
+  "passed": true
+}
