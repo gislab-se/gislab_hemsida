@@ -3,6 +3,15 @@
 
   window.GISLAB_LAB_PROJECTS = [
     {
+      id: "besoksscenarier",
+      title: "En natt i Sälenfjällen",
+      category: "Befolkning och turism",
+      status: "Prototyp",
+      summary: "Jämför hypotetiska turistnätter med modellerade fastboende i Sälenfjällen. Utforska samma 100-metersrutor i 2D och 3D, med WorldPop 2025 anpassat till bostadsbyggnader.",
+      tags: ["Sälenfjällen", "Besöksscenarier", "WorldPop", "3D"],
+      url: "/lab/besoksscenarier/"
+    },
+    {
       id: "regionkarta",
       title: "Regionkartan – Greater Copenhagen",
       category: "Regional analys",

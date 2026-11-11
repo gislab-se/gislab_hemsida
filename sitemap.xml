@@ -14,7 +14,7 @@
   </url>
   <url>
     <loc>https://gislab.se/lab/</loc>
-    <lastmod>2026-11-04</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -51,5 +51,11 @@
   <url>
     <loc>https://gislab.se/lab/vattenforbrukning/</loc>
     <lastmod>2026-10-28</lastmod>
+  </url>
+  <url>
+    <loc>https://gislab.se/lab/besoksscenarier/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>

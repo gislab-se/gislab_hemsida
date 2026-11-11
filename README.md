@@ -11,9 +11,18 @@ Källkod och publicerade resurser för [gislab.se](https://gislab.se/), GISLabs 
 - [Stockholm × Torsboda](https://gislab.se/lab/stockholm-torsboda/)
 - [Havsnivå och klimatanpassning](https://gislab.se/lab/havsniva-klimatanpassning/)
 - [Sälenfjällen i 3D](https://gislab.se/lab/salenfjallen-3d/)
+- [En natt i Sälenfjällen – besöksscenarier och fastboende](https://gislab.se/lab/besoksscenarier/)
 - [Vattenförbrukning i Vättern](https://gislab.se/lab/vattenforbrukning/)
 
 ## Struktur
+
+`lab/besoksscenarier/` är byggt från `C:/gislab/projekt/dalarna/besoksscenarier`.
+Det jämför hypotetiska övernattande besökare med WorldPop Global2 2025,
+anpassat till bostadsbyggnader på ett gemensamt 100-metersrutnät. Befolkningen
+är modellerad, inte faktisk folkbokföring. Appen använder paketerade data
+och lokala resurser; inga externa kartbilder, typsnitt eller analysanrop laddas.
+Uppdatera med innehållet i projektets `dist/` och behåll canonical-adressen,
+källhänvisningarna och länken tillbaka till Labbet.
 
 - `index.html` och `en/index.html` är webbplatsens svenska och engelska startsidor.
 - `lab/` innehåller de publicerade labbprototyperna.
