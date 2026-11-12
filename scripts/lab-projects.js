@@ -3,6 +3,15 @@
 
   window.GISLAB_LAB_PROJECTS = [
     {
+      id: "stiftslab",
+      title: "Stiftslab – kyrkans geografi",
+      category: "Geografi och organisation",
+      status: "Prototyp",
+      summary: "Pröva församlings- och kontraktsindelningar med Lunds stift som pilot. Utforska befolkning, kyrkor, begravningsplatser och dokumenterade fastighetskopplingar.",
+      tags: ["Församlingar", "Befolkning", "Kyrkor", "Fastigheter"],
+      url: "/lab/stiftslab/"
+    },
+    {
       id: "orebro-i-salenfjallen",
       title: "Örebro i Sälenfjällen",
       category: "Befolkning och mobilitet",

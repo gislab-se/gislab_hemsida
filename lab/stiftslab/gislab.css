@@ -1,0 +1,5 @@
+body[data-map-tool="stiftslab"] .workspace{height:calc(100dvh - 150px)}
+body[data-map-tool="stiftslab"] .map-consent-toolbar{position:fixed;bottom:0;left:0;right:0;min-height:62px;padding:8px 20px 8px 150px;border-top:1px solid #dfe5d9;background:#fbfcf8;z-index:1100;justify-content:flex-end}
+.gislab-return{position:fixed;bottom:0;left:20px;height:62px;display:flex;align-items:center;gap:12px;z-index:1101;font-size:11px}.gislab-return a{color:#315b47;text-decoration:none}.gislab-return a:hover{text-decoration:underline}.gislab-return a:last-child{display:none}
+body[data-map-tool="stiftslab"] .map-consent-toolbar .map-background-settings{font-size:11px;padding:8px 12px;min-height:38px}.map-consent-toolbar>a{font-size:10px}body[data-map-tool="stiftslab"] .map-consent{z-index:2000}
+@media(max-width:600px){body[data-map-tool="stiftslab"] .workspace{height:calc(100dvh - 126px)}body[data-map-tool="stiftslab"] .map-consent-toolbar{min-height:64px;padding:7px 10px 7px 76px;gap:3px 10px}.gislab-return{left:10px;height:64px;font-size:10px}.map-consent-toolbar .map-background-settings span{display:none}.map-consent-toolbar>a{font-size:9px}}

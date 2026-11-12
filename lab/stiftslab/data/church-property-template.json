@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "asOf": null,
+  "coverage": "Ange vilka församlingar, pastorat eller tillgångar förteckningen omfattar.",
+  "complete": false,
+  "sources": [],
+  "properties": [],
+  "fieldGuide": {
+    "id": "Unikt id för källraden.",
+    "designation": "Fullständig beteckning inklusive kommun, trakt och nummer, exakt som i källan.",
+    "municipalityCode": "Fyrsiffrig kommunkod som text.",
+    "organization": "Juridisk organisation eller förvaltade tillgångar enligt källan, inte ett antaget geografiskt pastorat.",
+    "relation": "owned, managed, leased, historical eller association-unverified.",
+    "sourceUrl": "Länk till belägget eller en dokumentreferens som kan följas upp.",
+    "sourceDate": "Datum då källuppgiften gällde, inte automatiskt hämtningsdagen.",
+    "sourcePage": "Sida/tabellrad om källan är ett dokument.",
+    "evidenceNote": "Vad källan faktiskt styrker, samt begränsningar.",
+    "name": "Valfritt namn på byggnad eller plats.",
+    "kind": "Valfri objekttyp. Markägande innebär inte automatiskt byggnadsägande."
+  }
+}

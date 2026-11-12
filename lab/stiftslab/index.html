@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#244c40">
+  <meta name="description" content="Utforska Svenska kyrkans stift och pröva nya församlings- och kontraktsindelningar. Börja med Lunds stift och skapa egna scenarier.">
+  <title>Stiftslab · Utforska kyrkans geografi | GISLab</title>
+  <link rel="canonical" href="https://gislab.se/lab/stiftslab/">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta property="og:title" content="Stiftslab · Kyrkans geografi | GISLab">
+  <meta property="og:description" content="Utforska församlingar, kontrakt, befolkning, kyrkor och fastigheter. Pröva nya geografiska indelningar med Lunds stift som pilot.">
+  <meta property="og:url" content="https://gislab.se/lab/stiftslab/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Stiftslab · Kyrkans geografi | GISLab">
+  <meta name="twitter:description" content="Pröva församlings- och kontraktsindelningar med befolkning, kyrkor och fastighetsunderlag.">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="vendor/leaflet.css"><link rel="stylesheet" href="vendor/geoman.css"><link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="analysis.css">
+  <link rel="stylesheet" href="church-assets.css">
+  <link rel="stylesheet" href="map-consent.css"><link rel="stylesheet" href="gislab.css">
+</head>
+<body data-map-tool="stiftslab" data-map-name="Stiftslab">
+  <header class="app-header">
+    <a class="brand" href="./" aria-label="Stiftslab startsida"><img src="icon.svg" alt="" width="42" height="42"><span><strong>Stiftslab<span class="brand-dot">.</span></strong><small>Utforska kyrkans geografi</small></span></a>
+    <div class="diocese-control"><span class="field-label">STIFT</span><select id="diocese" aria-label="Välj stift" disabled><option>Lunds stift</option></select></div>
+    <div class="header-actions"><button id="compare" class="button" aria-pressed="false"><span aria-hidden="true">◫</span> Jämför original</button><button id="save" class="button primary"><span aria-hidden="true">＋</span> Spara scenario</button><button id="menu" class="button icon-button" aria-label="Öppna scenarier och export" title="Scenarier och export">···</button></div>
+  </header>
+  <main class="workspace">
+    <aside class="sidebar" aria-label="Scenarioredigering">
+      <div class="scenario-heading"><div class="eyebrow">DIN ARBETSYTA <span class="status-dot"></span><span id="save-status">Lokalt scenario</span></div><input id="scenario-name" aria-label="Scenariots namn" maxlength="120" value="Mitt första scenario"><div class="scenario-sub"><span class="badge">Förslag</span><span>Originalindelningen bevaras</span></div></div>
+      <nav class="tabs" aria-label="Arbetsvy"><button data-tab="parishes" class="active">Församlingar <span id="parish-count">–</span></button><button data-tab="contracts">Kontrakt</button><button data-tab="analysis">Underlag</button><button data-tab="changes">Ändringar <span id="change-count">0</span></button></nav>
+      <div id="list-controls"><div class="search-wrap"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Sök församling eller LKF-kod…" aria-label="Sök församling"></div><select id="contract-filter" aria-label="Filtrera på kontrakt"><option value="">Alla kontrakt</option></select></div>
+      <div class="list-meta"><span id="list-label">Laddar församlingar…</span><button id="select-visible" class="text-button">Välj synliga</button></div>
+      <div id="list" class="entity-list" aria-live="polite"></div>
+      <section class="selection-panel" aria-label="Arbeta med valda församlingar"><div class="selection-top"><strong id="selection-title">Inga församlingar valda</strong><button id="clear-selection" class="text-button" disabled>Rensa</button></div><p id="selection-description">Klicka i kartan eller välj i listan.</p><label class="visually-hidden" for="move-target">Flytta till kontrakt</label><div class="move-row"><select id="move-target" disabled><option>Välj kontrakt</option></select><button id="move" class="button primary" disabled>Flytta</button></div><div class="geometry-actions"><button id="merge" class="button small" disabled>Slå samman</button><button id="split" class="button small" disabled>Dela</button><button id="transfer" class="button small" disabled>Flytta område</button></div></section>
+      <footer class="sidebar-footer"><button id="sources" class="text-button">ⓘ Data & källor</button><span>Indelning 2026-01-01</span></footer>
+    </aside>
+    <section class="map-area" aria-label="Interaktiv karta">
+      <div class="map-topbar"><div class="map-title"><span class="eyebrow">GEOGRAFISK ÖVERSIKT</span><h1 id="map-title">Lunds stift</h1><p id="map-subtitle">Församlingar och kontrakt</p></div><div class="map-tools"><label class="tool-pill"><input type="checkbox" id="multi-select"> Välj flera</label><button class="tool-pill" id="layers-button" aria-expanded="false">▱ Kartlager</button></div></div>
+      <div id="layer-panel" class="floating-panel layer-panel" hidden><strong>Kartlager</strong><label><input type="checkbox" id="layer-parishes" checked> Församlingsgränser</label><label><input type="checkbox" id="layer-contracts" checked> Kontraktsgränser</label><label><input type="checkbox" id="layer-diocese" checked> Stiftsgränser</label><label><input type="checkbox" id="layer-base" checked> Bakgrundskarta</label><div class="opacity-control"><label for="parish-opacity">Församlingsytornas opacitet <output id="parish-opacity-value" for="parish-opacity">37 %</output></label><input type="range" id="parish-opacity" min="0" max="100" step="1" value="37" aria-valuetext="37 procent"><div class="opacity-scale" aria-hidden="true"><span>Genomskinlig</span><span>Täckande</span></div></div><p>Reglaget gäller även originalkartan vid jämförelse.</p><div id="analysis-layer-controls"></div><div id="church-assets-controls"></div></div>
+      <div id="maps"><div id="original-pane"><div class="map-caption">Original · 2026-01-01</div><div id="original-map"></div></div><div id="scenario-pane"><div class="map-caption scenario-caption">Ditt scenario</div><div id="map"></div></div></div>
+      <div class="map-bottom"><details id="legend" class="floating-panel"><summary><span class="legend-dot"></span> Kontrakt <span id="legend-count">12</span><span class="chevron">⌃</span></summary><div id="legend-items"></div></details><div class="map-help" id="map-help"><strong>Ge plats åt nya möjligheter.</strong><span>Välj en församling för att börja utforska.</span></div></div>
+      <div class="map-history"><button id="undo" class="tool-pill" disabled title="Ångra senaste ändringen">↶ Ångra</button><button id="redo" class="tool-pill" disabled title="Gör om ändringen">↷</button><button id="fit" class="tool-pill" title="Visa hela stiftet" aria-label="Visa hela stiftet">⛶</button></div>
+      <div id="draw-banner" hidden><span id="draw-instruction"></span><button id="cancel-draw" class="button small">Avbryt</button></div>
+      <div id="loading"><div class="loading-card"><span class="spinner"></span><h2>Vi ritar upp stiftet</h2><p>Hämtar geografiska gränser och indelningar.</p></div></div>
+    </section>
+  </main>
+  <div id="toast" role="status" aria-live="polite" hidden></div>
+  <select id="map-background-choice-proxy" hidden aria-label="Kartbakgrund"><option value="none">Utan bakgrund</option><option value="osm">OpenStreetMap</option></select>
+  <nav class="gislab-return" aria-label="GISLab"><a href="/lab/">← Labbet</a><a href="/integritet/">Integritet</a></nav>
+  <dialog id="dialog"><div class="dialog-heading"><h2 id="dialog-title"></h2><button id="dialog-close" class="icon-button button" aria-label="Stäng dialog">×</button></div><div id="dialog-body"></div></dialog>
+  <script src="vendor/leaflet.js"></script><script src="vendor/turf.js"></script><script src="vendor/topojson-client.js"></script><script src="vendor/topojson-server.js"></script><script src="vendor/geoman.js"></script><script src="map-consent.js"></script><script type="module" src="app.js"></script>
+</body></html>
