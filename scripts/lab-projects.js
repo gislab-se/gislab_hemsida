@@ -7,7 +7,7 @@
       title: "En natt i Sälenfjällen",
       category: "Befolkning och turism",
       status: "Prototyp",
-      summary: "Jämför hypotetiska turistnätter med modellerade fastboende i Sälenfjällen. Utforska samma 100-metersrutor i 2D och 3D, med WorldPop 2025 anpassat till bostadsbyggnader.",
+      summary: "Utforska ett besöksscenario för hela Sälenfjällen med områdeskvoter och punktbaserad fastbefolkning på samma 100-metersrutor i 2D och 3D.",
       tags: ["Sälenfjällen", "Besöksscenarier", "WorldPop", "3D"],
       url: "/lab/besoksscenarier/"
     },
