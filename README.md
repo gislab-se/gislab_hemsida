@@ -8,7 +8,6 @@ Källkod och publicerade resurser för [gislab.se](https://gislab.se/), GISLabs 
 - [English start page](https://gislab.se/en/)
 - [Labbet](https://gislab.se/lab/)
 - [Stiftslab – kyrkans geografi](https://gislab.se/lab/stiftslab/)
-- [Stiftslab – kyrkans geografi](https://gislab.se/lab/stiftslab/)
 - [Örebro i Sälenfjällen](https://gislab.se/lab/orebro-i-salenfjallen/)
 - [Regionkartan – Greater Copenhagen (pågående projekt)](https://gislab.se/lab/regionkarta/)
 - [Stockholm × Torsboda](https://gislab.se/lab/stockholm-torsboda/)
@@ -30,14 +29,6 @@ Verifierat inför publicering: 22 app-/datatester, fyra beteckningstester,
 oberoende kontroll av 12 fastigheter/29 skiften, webbplatsens fem integritetstester
 och HTTP-leverans av app, workers, JSON/GeoJSON och rasterbinär under rätt sökväg.
 Visuell webbläsargranskning återstår på grund av otillgänglig preview-infrastruktur.
-
-`lab/stiftslab/` är den statiska appen från `C:/gislab/projekt/kyrkan/stiftslab/dist`.
-Den publicerades 2026-11-12 med alla stifts gränser, SCB-folkmängd och Lunds
-fördjupade planeringsunderlag. Kyrko-/begravningsplatslagret och de dokumenterade
-fastighetskopplingarna är uttryckligen ofullständiga. Appen använder den gemensamma
-kartdialogen, lokala resurser och lokal IndexedDB för scenarier. Externa OSM-bilder
-aktiveras först efter besökarens val. Inga privata arbetsutkast, råa PDF-filer,
-inloggningsuppgifter eller `.openai`-filer följer med publiceringen.
 
 `lab/besoksscenarier/` är byggt från `C:/gislab/projekt/dalarna/besoksscenarier`.
 Det jämför hypotetiska övernattande besökare med WorldPop Global2 2025,
