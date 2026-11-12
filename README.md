@@ -7,6 +7,7 @@ Källkod och publicerade resurser för [gislab.se](https://gislab.se/), GISLabs 
 - [Svensk startsida](https://gislab.se/)
 - [English start page](https://gislab.se/en/)
 - [Labbet](https://gislab.se/lab/)
+- [Örebro i Sälenfjällen](https://gislab.se/lab/orebro-i-salenfjallen/)
 - [Regionkartan – Greater Copenhagen (pågående projekt)](https://gislab.se/lab/regionkarta/)
 - [Stockholm × Torsboda](https://gislab.se/lab/stockholm-torsboda/)
 - [Havsnivå och klimatanpassning](https://gislab.se/lab/havsniva-klimatanpassning/)
@@ -125,3 +126,9 @@ node tests/map-consent.browser.cjs
 ```
 
 `MAP_TEST_OUTPUT` anger katalog för rapport och skärmbilder. `MAP_TEST_LIVE=1` använder verkliga kartbilder utan avlyssnade eller ersatta svar. Kör även `node --test tests/privacy.test.cjs`. Publicering sker som tidigare via main och GitHub Pages.
+
+## Örebro i Sälenfjällen
+
+`lab/orebro-i-salenfjallen/` är den statiska GISlab-publiceringen av `C:/gislab/projekt/dalarna/besoksscenarier/sites/orebro`. Kortet Kartanalys på svenska startsidan och projektkatalogen i Labbet länkar hit. Bygg från källprojektet och kopiera endast `dist/`; bevara relativa resurssökvägar och GISlabs canonical-adress. Samma app har en separat Sites-publicering.
+
+Appen jämför WorldPop 2026 i Örebro med 100 000 hypotetiska nattbesökare i Sälen samt GTFS Regional för 9 november–12 december 2026 (periodgenomsnitt, inte årsgenomsnitt). All data och alla kartresurser ligger lokalt; inga nycklar eller råa personpunkter publiceras. Källdata, avgränsningar, metod och trafiktäckning beskrivs i appen och dess JSON-exporter.

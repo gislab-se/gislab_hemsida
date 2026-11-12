@@ -82,7 +82,7 @@ test('public pages contain privacy information and no automatically loaded third
         assert.doesNotMatch(content, /(?:href|src)="https:\/\/fonts\.(?:googleapis|gstatic)\.com|@import\s*["']https?:/i, file);
         assert.doesNotMatch(content, /<(?:iframe|script|img)\b[^>]*\bsrc=["']https?:/i, file);
         if (entry.name === 'index.html' && !file.includes('klimatinitiativet')) {
-          assert.match(content, /href="\/(?:integritet|en\/privacy)\//, file);
+          assert.match(content, /href="(?:https:\/\/gislab\.se)?\/(?:integritet|en\/privacy)\//, file);
         }
       }
     }

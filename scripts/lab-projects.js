@@ -3,6 +3,15 @@
 
   window.GISLAB_LAB_PROJECTS = [
     {
+      id: "orebro-i-salenfjallen",
+      title: "Örebro i Sälenfjällen",
+      category: "Befolkning och mobilitet",
+      status: "Prototyp",
+      summary: "Jämför 100 000 modellerade boende i Örebro med lika många hypotetiska besökare i Sälenfjällen. Utforska befolkningsrutor och planerad kollektivtrafik med gemensamma skalor.",
+      tags: ["Örebro", "Sälenfjällen", "WorldPop", "GTFS"],
+      url: "/lab/orebro-i-salenfjallen/"
+    },
+    {
       id: "besoksscenarier",
       title: "En natt i Sälenfjällen",
       category: "Befolkning och turism",
